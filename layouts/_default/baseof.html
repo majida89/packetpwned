@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}PacketPwned — Majid Ahmed{{ else }}{{ .Title }} | PacketPwned{{ end }}</title>
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">packet<span>pwned</span>.com</div>
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>© {{ now.Year }} <span>Majid Ahmed</span> · CCIE #55880 · CISSP · packetpwned.com</p>
+  </footer>
+
+</body>
+</html>

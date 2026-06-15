@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="section">
+  <p class="section-label">// {{ .Section }}</p>
+  <h2>{{ .Title }}</h2>
+
+  <ul class="post-list">
+    {{ range .Pages }}
+    <li class="post-item">
+      <span class="post-date">{{ .Date.Format "02 Jan 2006" }}</span>
+      <div>
+        <div class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        <div class="post-desc">{{ .Description }}</div>
+        {{ if .Params.tags }}
+        <div class="post-tags">
+          {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

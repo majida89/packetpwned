@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="post-content">
+  <header class="post-header">
+    <p class="section-label">// {{ .Section }}</p>
+    <h1>{{ .Title }}</h1>
+    <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem;">
+      {{ .Date.Format "02 January 2006" }}
+      {{ if .Params.tags }}
+        &nbsp;·&nbsp;
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span> {{ end }}
+      {{ end }}
+    </p>
+  </header>
+
+  {{ .Content }}
+</article>
+{{ end }}

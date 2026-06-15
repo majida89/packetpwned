@@ -1,0 +1,74 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-label">whoami</p>
+  <h1>Majid<br><span class="accent">Ahmed.</span></h1>
+  <p class="hero-sub">// Senior Network & Security Engineer · UAE · 10+ years securing enterprise infrastructure</p>
+
+  <div class="certs">
+    <span class="cert-badge highlight">CCIE #55880</span>
+    <span class="cert-badge highlight">CISSP</span>
+    <span class="cert-badge">PCNSE</span>
+    <span class="cert-badge">NSE4</span>
+    <span class="cert-badge">CEH</span>
+    <span class="cert-badge">CompTIA Sec+</span>
+    <span class="cert-badge">ISO 27001</span>
+  </div>
+
+  <div class="hero-cta">
+    <a href="/writeups/" class="btn">View Writeups</a>
+    <a href="/about/" class="btn btn-ghost">About Me</a>
+    <a href="https://linkedin.com/in/majid-ahmed-b6006640/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+  </div>
+</section>
+
+<!-- Latest Writeups -->
+<section class="section">
+  <p class="section-label">// latest</p>
+  <h2>TryHackMe Writeups</h2>
+
+  <div class="card-grid">
+    {{ range first 3 (where .Site.RegularPages "Section" "writeups") }}
+    <div class="card">
+      <p class="card-tag">{{ .Date.Format "Jan 2006" }}</p>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description }}</p>
+      <a href="{{ .Permalink }}" class="card-link">Read writeup</a>
+    </div>
+    {{ end }}
+  </div>
+
+  <p style="margin-top:1.5rem;">
+    <a href="/writeups/" class="btn btn-ghost">All writeups →</a>
+  </p>
+</section>
+
+<!-- Projects -->
+<section class="section">
+  <p class="section-label">// projects</p>
+  <h2>Notable Projects</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <p class="card-tag">Palo Alto</p>
+      <h3>PA-3000 → PA-5000 Migration</h3>
+      <p>Full lifecycle firewall migration with policy cleanup, zone redesign, and zero-downtime cutover.</p>
+      <a href="/projects/" class="card-link">Details</a>
+    </div>
+    <div class="card">
+      <p class="card-tag">Network</p>
+      <h3>Cisco → Arista Migration</h3>
+      <p>Enterprise data center migration from Cisco to Arista with BGP, VRF, and MPLS re-architecture.</p>
+      <a href="/projects/" class="card-link">Details</a>
+    </div>
+    <div class="card">
+      <p class="card-tag">Security</p>
+      <h3>GetVPN / GDOI Deployment</h3>
+      <p>Group encrypted transport VPN deployment across enterprise WAN for secure multicast traffic.</p>
+      <a href="/projects/" class="card-link">Details</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
