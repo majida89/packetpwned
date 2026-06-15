@@ -1,7 +1,7 @@
 baseURL = "https://packetpwned.com"
-languageCode = "en-us"
+locale = "en-us"
 title = "PacketPwned"
-theme = ""
+
 
 [params]
   author = "Majid Ahmed"
