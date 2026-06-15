@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="section">
+  <div class="section-header">
+    <h2>Fitness log</h2>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="fitness-grid">
+    <div class="fitness-stat">
+      <div class="label">Total sessions</div>
+      <div class="value">{{ len (where .Site.RegularPages "Section" "fitness") }}<span class="unit">logged</span></div>
+    </div>
+    <div class="fitness-stat">
+      <div class="label">CrossFit</div>
+      <div class="value">{{ len (where (where .Site.RegularPages "Section" "fitness") ".Params.sport" "crossfit") }}<span class="unit">WODs</span></div>
+    </div>
+    <div class="fitness-stat">
+      <div class="label">Running</div>
+      <div class="value">{{ len (where (where .Site.RegularPages "Section" "fitness") ".Params.sport" "running") }}<span class="unit">runs</span></div>
+    </div>
+    <div class="fitness-stat">
+      <div class="label">Cycling</div>
+      <div class="value">{{ len (where (where .Site.RegularPages "Section" "fitness") ".Params.sport" "cycling") }}<span class="unit">rides</span></div>
+    </div>
+  </div>
+
+  <!-- Session list -->
+  {{ range .Pages }}
+  <div class="wod-card">
+    <div class="wod-date-col">
+      <div class="wod-day">{{ .Date.Format "02" }}</div>
+      <div class="wod-month">{{ .Date.Format "Jan" }}</div>
+    </div>
+    <div>
+      <span class="wod-type {{ .Params.sport | default "crossfit" }}">{{ .Params.sport | default "crossfit" | upper }}</span>
+      <div class="wod-title"><a href="{{ .Permalink }}" style="color:inherit;text-decoration:none;">{{ .Title }}</a></div>
+      <div class="wod-desc">{{ .Description }}</div>
+    </div>
+    <div class="wod-result">
+      {{ if .Params.score }}<div class="wod-score">{{ .Params.score }}</div>{{ end }}
+      {{ if .Params.rx }}<span class="rx-badge">Rx</span>{{ end }}
+      {{ if .Params.pr }}<span class="pr-badge">PR</span>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

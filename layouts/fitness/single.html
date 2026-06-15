@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="post-content">
+  <header class="post-header">
+    <span class="wod-type {{ .Params.sport | default "crossfit" }}" style="display:inline-flex;align-items:center;gap:0.3rem;font-family:var(--mono);font-size:0.65rem;padding:0.2rem 0.5rem;border-radius:20px;margin-bottom:0.75rem;">
+      {{ .Params.sport | default "crossfit" | upper }}
+    </span>
+    <h1>{{ .Title }}</h1>
+    <p style="font-family:var(--mono);font-size:0.72rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <span>{{ .Date.Format "02 January 2006" }}</span>
+      {{ if .Params.score }}<span style="color:var(--text);">Score: <strong>{{ .Params.score }}</strong></span>{{ end }}
+      {{ if .Params.rx }}<span class="rx-badge">Rx</span>{{ end }}
+      {{ if .Params.pr }}<span class="pr-badge">🏆 PR</span>{{ end }}
+    </p>
+  </header>
+  {{ .Content }}
+</article>
+{{ end }}

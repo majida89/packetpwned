@@ -1,73 +1,117 @@
 {{ define "main" }}
 
-<!-- Hero -->
 <section class="hero">
-  <p class="hero-label">whoami</p>
-  <h1>Majid<br><span class="accent">Ahmed.</span></h1>
-  <p class="hero-sub">// Senior Network & Security Engineer · UAE · 10+ years securing enterprise infrastructure</p>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Senior Network &amp; Security Engineer · UAE</p>
+    <h1>Majid <em>Ahmed</em><br>CCIE #55880</h1>
+    <p class="hero-sub">Building secure, resilient enterprise infrastructure. Exploring offensive security through TryHackMe. Designing networks that hold.</p>
 
-  <div class="certs">
-    <span class="cert-badge highlight">CCIE #55880</span>
-    <span class="cert-badge highlight">CISSP</span>
-    <span class="cert-badge">PCNSE</span>
-    <span class="cert-badge">NSE4</span>
-    <span class="cert-badge">CEH</span>
-    <span class="cert-badge">CompTIA Sec+</span>
-    <span class="cert-badge">ISO 27001</span>
+    <div class="certs">
+      <span class="cert-badge highlight">CCIE #55880</span>
+      <span class="cert-badge highlight">CISSP</span>
+      <span class="cert-badge">PCNSE</span>
+      <span class="cert-badge">NSE4</span>
+      <span class="cert-badge">CEH</span>
+      <span class="cert-badge">Security+</span>
+      <span class="cert-badge">ISO 27001</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="/writeups/" class="btn btn-primary">View Writeups</a>
+      <a href="/projects/" class="btn btn-secondary">Projects</a>
+      <a href="https://linkedin.com/in/majid-ahmed-b6006640/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+    </div>
   </div>
 
-  <div class="hero-cta">
-    <a href="/writeups/" class="btn">View Writeups</a>
-    <a href="/about/" class="btn btn-ghost">About Me</a>
-    <a href="https://linkedin.com/in/majid-ahmed-b6006640/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-label">Experience</div>
+      <div class="stat-value">10+ <span class="unit">years</span></div>
+      <div class="stat-sub">Enterprise network & security</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Certifications</div>
+      <div class="stat-value">7 <span class="unit">active</span></div>
+      <div class="stat-sub">CCIE · CISSP · PCNSE · more</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Current path</div>
+      <div class="stat-value" style="font-size:0.9rem;">Jr. Pentester</div>
+      <div class="stat-sub">TryHackMe · Active</div>
+      <div class="lang-row">
+        <div class="lang-dot" style="background:#f1e05a"></div>
+        <span class="lang-text">In progress</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Company</div>
+      <div class="stat-value" style="font-size:0.9rem;">Alphadata</div>
+      <div class="stat-sub">Jan 2023 – present</div>
+    </div>
   </div>
 </section>
 
 <!-- Latest Writeups -->
 <section class="section">
-  <p class="section-label">// latest</p>
-  <h2>TryHackMe Writeups</h2>
-
+  <div class="section-header">
+    <h2>Latest writeups</h2>
+    <a href="/writeups/" class="section-link">View all →</a>
+  </div>
   <div class="card-grid">
     {{ range first 3 (where .Site.RegularPages "Section" "writeups") }}
     <div class="card">
       <p class="card-tag">{{ .Date.Format "Jan 2006" }}</p>
       <h3>{{ .Title }}</h3>
       <p>{{ .Description }}</p>
-      <a href="{{ .Permalink }}" class="card-link">Read writeup</a>
+      <a href="{{ .Permalink }}" class="card-link">Read writeup →</a>
     </div>
     {{ end }}
   </div>
-
-  <p style="margin-top:1.5rem;">
-    <a href="/writeups/" class="btn btn-ghost">All writeups →</a>
-  </p>
 </section>
 
 <!-- Projects -->
 <section class="section">
-  <p class="section-label">// projects</p>
-  <h2>Notable Projects</h2>
-
+  <div class="section-header">
+    <h2>Notable projects</h2>
+    <a href="/projects/" class="section-link">View all →</a>
+  </div>
   <div class="card-grid">
     <div class="card">
       <p class="card-tag">Palo Alto</p>
       <h3>PA-3000 → PA-5000 Migration</h3>
       <p>Full lifecycle firewall migration with policy cleanup, zone redesign, and zero-downtime cutover.</p>
-      <a href="/projects/" class="card-link">Details</a>
+      <a href="/projects/" class="card-link">Details →</a>
     </div>
     <div class="card">
       <p class="card-tag">Network</p>
       <h3>Cisco → Arista Migration</h3>
-      <p>Enterprise data center migration from Cisco to Arista with BGP, VRF, and MPLS re-architecture.</p>
-      <a href="/projects/" class="card-link">Details</a>
+      <p>Enterprise data center migration with BGP, VRF, and MPLS re-architecture.</p>
+      <a href="/projects/" class="card-link">Details →</a>
     </div>
     <div class="card">
       <p class="card-tag">Security</p>
       <h3>GetVPN / GDOI Deployment</h3>
-      <p>Group encrypted transport VPN deployment across enterprise WAN for secure multicast traffic.</p>
-      <a href="/projects/" class="card-link">Details</a>
+      <p>Group encrypted transport VPN across enterprise WAN for secure multicast traffic.</p>
+      <a href="/projects/" class="card-link">Details →</a>
     </div>
+  </div>
+</section>
+
+<!-- Fitness teaser -->
+<section class="section">
+  <div class="section-header">
+    <h2>Fitness log</h2>
+    <a href="/fitness/" class="section-link">View all →</a>
+  </div>
+  <div class="card-grid">
+    {{ range first 2 (where .Site.RegularPages "Section" "fitness") }}
+    <div class="card">
+      <p class="card-tag">{{ .Params.sport | default "CrossFit" }}</p>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description }}</p>
+      <a href="{{ .Permalink }}" class="card-link">View session →</a>
+    </div>
+    {{ end }}
   </div>
 </section>
 

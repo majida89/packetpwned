@@ -10,7 +10,10 @@
 <body>
 
   <nav>
-    <div class="nav-logo">packet<span>pwned</span>.com</div>
+    <div class="nav-logo">
+      <div class="hex"></div>
+      packetpwned
+    </div>
     <ul class="nav-links">
       {{ range .Site.Menus.main }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
@@ -23,7 +26,7 @@
   </main>
 
   <footer>
-    <p>© {{ now.Year }} <span>Majid Ahmed</span> · CCIE #55880 · CISSP · packetpwned.com</p>
+    <p>© {{ now.Year }} <a href="/">Majid Ahmed</a> · CCIE #55880 · CISSP · Built with Hugo & GitHub Pages</p>
   </footer>
 
 </body>

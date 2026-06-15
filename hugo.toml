@@ -2,27 +2,24 @@ baseURL = "https://packetpwned.com"
 locale = "en-us"
 title = "PacketPwned"
 
-
 [params]
   author = "Majid Ahmed"
   description = "Designing secure & resilient networks. CCIE #55880 | CISSP | Pentester."
   tagline = "Designing Secure & Resilient Networks"
-  github = "https://github.com/majidahmed"
   linkedin = "https://linkedin.com/in/majid-ahmed-b6006640/"
-  tryhackme = "https://tryhackme.com"
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
     name = "Writeups"
     url = "/writeups/"
-    weight = 2
+    weight = 1
   [[menu.main]]
     name = "Projects"
     url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Fitness"
+    url = "/fitness/"
     weight = 3
   [[menu.main]]
     name = "Blog"
