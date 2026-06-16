@@ -97,22 +97,4 @@
   </div>
 </section>
 
-<!-- Fitness teaser -->
-<section class="section">
-  <div class="section-header">
-    <h2>Fitness log</h2>
-    <a href="/fitness/" class="section-link">View all →</a>
-  </div>
-  <div class="card-grid">
-    {{ range first 2 (where .Site.RegularPages "Section" "fitness") }}
-    <div class="card">
-      <p class="card-tag">{{ .Params.sport | default "CrossFit" }}</p>
-      <h3>{{ .Title }}</h3>
-      <p>{{ .Description }}</p>
-      <a href="{{ .Permalink }}" class="card-link">View session →</a>
-    </div>
-    {{ end }}
-  </div>
-</section>
-
 {{ end }}
