@@ -1,23 +1,38 @@
 {{ define "main" }}
-<div class="section">
-  <p class="section-label">// {{ .Section }}</p>
-  <h2>{{ .Title }}</h2>
+<section class="relative px-4 pt-32 pb-24">
+  <div class="glow-blob w-72 h-72 bg-neon/10 top-10 -right-20 animate-float"></div>
+  <div class="max-w-4xl mx-auto">
 
-  <ul class="post-list">
-    {{ range .Pages }}
-    <li class="post-item">
-      <span class="post-date">{{ .Date.Format "02 Jan 2006" }}</span>
-      <div>
-        <div class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-        <div class="post-desc">{{ .Description }}</div>
-        {{ if .Params.tags }}
-        <div class="post-tags">
-          {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
-        </div>
-        {{ end }}
-      </div>
-    </li>
-    {{ end }}
-  </ul>
-</div>
+    <div class="mb-12 reveal">
+      <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-3">// {{ .Section }}</p>
+      <h1 class="font-display text-5xl font-bold gradient-text">{{ .Title }}</h1>
+    </div>
+
+    <ul class="space-y-4">
+      {{ range .Pages }}
+      <li class="reveal project-card glass rounded-2xl border border-border overflow-hidden">
+        <a href="{{ .Permalink }}" class="flex items-start gap-6 p-6 group">
+          <div class="flex-shrink-0 text-right min-w-[80px]">
+            <p class="font-mono text-xs text-slate-500">{{ .Date.Format "02 Jan" }}</p>
+            <p class="font-mono text-xs text-slate-600">{{ .Date.Format "2006" }}</p>
+          </div>
+          <div class="flex-1">
+            <h2 class="text-base font-semibold text-white mb-1 group-hover:text-neon transition-colors duration-200">{{ .Title }}</h2>
+            <p class="text-sm text-slate-400 leading-relaxed">{{ .Description }}</p>
+            {{ if .Params.tags }}
+            <div class="flex flex-wrap gap-2 mt-3">
+              {{ range .Params.tags }}
+              <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-neon/10 text-neon/70 border border-neon/20">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <svg class="w-4 h-4 text-slate-600 group-hover:text-neon transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+
+  </div>
+</section>
 {{ end }}

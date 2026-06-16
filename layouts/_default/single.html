@@ -1,17 +1,32 @@
 {{ define "main" }}
-<article class="post-content">
-  <header class="post-header">
-    <p class="section-label">// {{ .Section }}</p>
-    <h1>{{ .Title }}</h1>
-    <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem;">
-      {{ .Date.Format "02 January 2006" }}
-      {{ if .Params.tags }}
-        &nbsp;·&nbsp;
-        {{ range .Params.tags }}<span class="tag">{{ . }}</span> {{ end }}
-      {{ end }}
-    </p>
-  </header>
+<section class="relative px-4 pt-32 pb-24">
+  <div class="glow-blob w-72 h-72 bg-neon/10 top-10 -left-20 animate-float"></div>
+  <div class="max-w-3xl mx-auto">
 
-  {{ .Content }}
-</article>
+    <header class="mb-12 reveal">
+      <a href="/{{ .Section }}/" class="inline-flex items-center gap-1 font-mono text-xs text-neon/70 hover:text-neon transition-colors mb-6">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        {{ .Section }}
+      </a>
+      <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-3">// {{ .Section }}</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">{{ .Title }}</h1>
+      <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 font-mono">
+        <span>{{ .Date.Format "02 January 2006" }}</span>
+        {{ if .Params.tags }}
+        <span class="text-slate-700">·</span>
+        <div class="flex flex-wrap gap-2">
+          {{ range .Params.tags }}
+          <span class="text-xs px-2 py-0.5 rounded-full bg-neon/10 text-neon/70 border border-neon/20">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+
+    <div class="glass rounded-2xl border border-border p-8 reveal prose-packetpwned">
+      {{ .Content }}
+    </div>
+
+  </div>
+</section>
 {{ end }}

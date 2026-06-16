@@ -1,33 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}PacketPwned — Majid Ahmed{{ else }}{{ .Title }} | PacketPwned{{ end }}</title>
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Caveat', 'cursive'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            bg: '#0A0A0F',
+            surface: '#111118',
+            card: '#16161F',
+            border: '#1E1E2E',
+            accent: '#2563EB',
+            'accent-light': '#3B82F6',
+            neon: '#6366F1',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.4s ease forwards',
+            float: 'float 6s ease-in-out infinite',
+            glow: 'glow 2s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              from: { opacity: '0', transform: 'translateY(24px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              from: { opacity: '0' },
+              to: { opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            glow: {
+              '0%, 100%': { opacity: '0.6' },
+              '50%': { opacity: '1' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { color-scheme: dark; }
+    body { background-color: #0A0A0F; color: #E2E8F0; }
 
-  <nav>
-    <div class="nav-logo">
-      <div class="hex"></div>
-      packetpwned
+    .glass {
+      background: rgba(22, 22, 31, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(99, 102, 241, 0.12);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366F1 0%, #2563EB 50%, #0EA5E9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .navbar {
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: #6366F1;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: #A5B4FC; }
+
+    .project-card {
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+    }
+
+    /* Post / article content styles */
+    .prose-packetpwned h1 { font-size: 1.8rem; font-weight: 600; color: #E2E8F0; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .prose-packetpwned h2 { font-size: 1.2rem; font-weight: 600; color: #E2E8F0; margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #1E1E2E; }
+    .prose-packetpwned h3 { font-size: 1rem; font-weight: 600; color: #E2E8F0; margin: 1.5rem 0 0.5rem; }
+    .prose-packetpwned p { margin-bottom: 1rem; color: #8B9DC3; line-height: 1.7; }
+    .prose-packetpwned a { color: #6366F1; text-decoration: none; }
+    .prose-packetpwned a:hover { color: #A5B4FC; }
+    .prose-packetpwned code { font-family: 'JetBrains Mono', monospace; font-size: 0.82em; background: #16161F; border: 1px solid #1E1E2E; padding: 0.15em 0.45em; border-radius: 4px; color: #E3B341; }
+    .prose-packetpwned pre { background: rgba(22,22,31,0.8); border: 1px solid #1E1E2E; border-radius: 12px; padding: 1.25rem; overflow-x: auto; margin: 1.25rem 0; }
+    .prose-packetpwned pre code { background: none; border: none; padding: 0; color: #E2E8F0; font-size: 0.85rem; }
+    .prose-packetpwned blockquote { border-left: 3px solid #6366F1; padding-left: 1rem; color: #8B9DC3; margin: 1.25rem 0; }
+    .prose-packetpwned ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #8B9DC3; }
+    .prose-packetpwned ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #8B9DC3; }
+    .prose-packetpwned li { margin-bottom: 0.3rem; }
+    .prose-packetpwned table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .prose-packetpwned th { text-align: left; padding: 0.6rem 0.75rem; background: #16161F; border: 1px solid #1E1E2E; color: #E2E8F0; font-weight: 600; }
+    .prose-packetpwned td { padding: 0.6rem 0.75rem; border: 1px solid #1E1E2E; color: #8B9DC3; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="navbar fixed top-4 left-4 right-4 z-50 rounded-2xl border border-border px-6 py-3">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="font-display text-2xl font-bold gradient-text">PacketPwned.</a>
+      <div class="hidden md:flex items-center gap-8">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-link text-sm text-slate-400">{{ .Name }}</a>
+        {{ end }}
+      </div>
+      <a href="https://linkedin.com/in/majid-ahmed-b6006640/" target="_blank"
+         class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neon/10 border border-neon/25 text-neon text-sm font-medium hover:bg-neon/20 transition-colors duration-200">
+        LinkedIn ↗
+      </a>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg border border-border" aria-label="Open menu">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-    <ul class="nav-links">
-      {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
   </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-bg/95 flex flex-col items-center justify-center gap-8">
+    <button id="close-menu" class="absolute top-6 right-6 p-2" aria-label="Close menu">
+      <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" class="text-2xl font-display font-semibold text-slate-200">{{ .Name }}</a>
+    {{ end }}
+  </div>
 
   <main>
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer>
-    <p>© {{ now.Year }} <a href="/">Majid Ahmed</a> · CCIE #55880 · CISSP · Built with Hugo & GitHub Pages</p>
+  <footer class="py-8 px-4 border-t border-border mt-24">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-slate-600 text-sm font-mono">© {{ now.Year }} Majid Ahmed · CCIE #55880 · CISSP</p>
+      <p class="text-slate-700 text-xs">Built with Hugo &amp; GitHub Pages</p>
+    </div>
   </footer>
 
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); });
+    closeMenu.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
