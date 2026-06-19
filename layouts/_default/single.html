@@ -4,10 +4,12 @@
   <div class="max-w-3xl mx-auto">
 
     <header class="mb-12 reveal">
+      {{ if and .Section (ne .Section "") }}
       <a href="/{{ .Section }}/" class="inline-flex items-center gap-1 font-mono text-xs text-neon/70 hover:text-neon transition-colors mb-6">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         {{ .Section }}
       </a>
+      {{ end }}
       <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-3">// {{ .Section }}</p>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">{{ .Title }}</h1>
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 font-mono">
