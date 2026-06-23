@@ -1,5 +1,5 @@
 ---
-title: "John the Ripper — TryHackMe"
+title: "TryHackMe: John the Ripper"
 date: 2026-06-23
 description: "A deep dive into password cracking with John the Ripper — hashes, wordlists, custom rules, zip/RAR files, and SSH keys."
 tags: ["TryHackMe", "Password Cracking", "John", "Linux", "Jr Pentester"]
