@@ -201,6 +201,35 @@ ssh -i id_rsa user@target
 
 ---
 
+## Task Answers
+
+| Task | Question | Answer |
+|------|----------|--------|
+| Task 2 | Most popular extended version of John the Ripper? | Jumbo John |
+| Task 3 | Which website's breach was rockyou.txt created from? | rockyou.com |
+| Task 4 | What type of hash is hash1.txt? | md5 |
+| Task 4 | Cracked value of hash1.txt? | biscuit |
+| Task 4 | What type of hash is hash2.txt? | sha1 |
+| Task 4 | Cracked value of hash2.txt? | kangaroo |
+| Task 4 | What type of hash is hash3.txt? | sha256 |
+| Task 4 | Cracked value of hash3.txt? | microphone |
+| Task 4 | What type of hash is hash4.txt? | whirlpool |
+| Task 4 | Cracked value of hash4.txt? | colossal |
+| Task 5 | What `--format` flag to crack the NTLM hash? | nt |
+| Task 5 | Cracked value of the NTLM hash? | mushroom |
+| Task 6 | What is the root password? | 1234 |
+| Task 7 | What is Joker's password? | Jok3r |
+| Task 8 | What do custom rules allow us to exploit? | Password complexity predictability |
+| Task 8 | Rule to append all capital letters to end of word? | `Az"[A-Z]"` |
+| Task 8 | Flag to call a custom rule named THMRules? | `--rule=THMRules` |
+| Task 9 | Password for secure.zip? | pass123 |
+| Task 9 | Flag inside the zip file? | `THM{w3ll_d0n3_h4sh_r0y4l}` |
+| Task 10 | Password for secure.rar? | password |
+| Task 10 | Flag inside the rar file? | `THM{r4r_4rch1ve5_th15_t1m3}` |
+| Task 11 | SSH private key password? | mango |
+
+---
+
 ## Tools Referenced
 
 | Tool | Purpose |
