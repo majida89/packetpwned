@@ -64,15 +64,15 @@
       "date": "Feb 14, 2026",
       "distance_km": 21.3,
       "time": "2:45:21",
-      "avg_pace": "7:46/km",
+      "avg_pace": "7:45/km",
       "pr": true
     },
     {
       "name": "One Run International",
       "date": "May 23, 2026",
       "distance_km": 10.0,
-      "time": "45:43",
-      "avg_pace": "4:33/km",
+      "time": "1:15:43",
+      "avg_pace": "7:32/km",
       "pr": false
     }
   ]
