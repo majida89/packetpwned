@@ -19,7 +19,7 @@ title = "PacketPwned"
     weight = 2
   [[menu.main]]
     name = "Fitness"
-    url = "/fitness/performance/"
+    url = "/fitness/"
     weight = 4
   [[menu.main]]
     name = "Blog"
