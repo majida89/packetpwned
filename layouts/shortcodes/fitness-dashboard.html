@@ -1,0 +1,212 @@
+{{ $d := .Site.Data.fitness }}
+{{ $m := $d.monthly }}
+{{ $y := $d.yearly }}
+{{ $cur := $d.current_month }}
+
+<div class="fitness-dash">
+
+  <!-- status bar -->
+  <div class="fd-status-bar">
+    <span class="fd-status-label">{{ $cur.label }} load</span>
+    <div class="fd-progress-wrap">
+      <div class="fd-progress-track">
+        <div class="fd-progress-fill" id="loadBar"
+          data-runs="{{ $cur.runs }}"
+          data-rides="{{ $cur.rides }}"
+          data-hiit="{{ $cur.hiit }}">
+        </div>
+      </div>
+    </div>
+    <span class="fd-status-meta">{{ $cur.runs }} runs · {{ $cur.rides }} rides · {{ $cur.hiit }} HIIT</span>
+  </div>
+
+  <!-- yearly stats -->
+  <p class="fd-section-comment">yearly_summary</p>
+  <div class="fd-metrics-grid">
+    <div class="fd-metric-card fd-accent-teal">
+      <p class="fd-label">Total distance</p>
+      <p class="fd-value">{{ $y.total_run_km }}<span class="fd-unit">km</span></p>
+      <p class="fd-sub">Running only</p>
+    </div>
+    <div class="fd-metric-card">
+      <p class="fd-label">Activities</p>
+      <p class="fd-value">{{ $y.total_activities }}</p>
+      <p class="fd-sub">All types</p>
+    </div>
+    <div class="fd-metric-card">
+      <p class="fd-label">Calories burned</p>
+      <p class="fd-value">{{ div $y.total_calories 1000 }}k<span class="fd-unit">kcal</span></p>
+      <p class="fd-sub">Logged activities</p>
+    </div>
+    <div class="fd-metric-card fd-accent-purple">
+      <p class="fd-label">Best month</p>
+      <p class="fd-value" style="font-size:1.1rem">{{ $y.best_month }}</p>
+      <p class="fd-sub">{{ $y.best_month_km }} km</p>
+    </div>
+    <div class="fd-metric-card">
+      <p class="fd-label">Longest run</p>
+      <p class="fd-value">{{ $y.longest_run_km }}<span class="fd-unit">km</span></p>
+      <p class="fd-sub">{{ $y.longest_run_label }}</p>
+    </div>
+    <div class="fd-metric-card">
+      <p class="fd-label">Peak pace</p>
+      <p class="fd-value">{{ $y.peak_pace_per_km }}<span class="fd-unit">/km</span></p>
+      <p class="fd-sub">Race condition</p>
+    </div>
+  </div>
+
+  <!-- distance chart -->
+  <p class="fd-section-comment">monthly_distance_km</p>
+  <div class="fd-chart-card">
+    <p class="fd-chart-title">running distance · monthly total (km)</p>
+    <div class="fd-legend">
+      <span><span class="fd-legend-dot" style="background:#00E5B4"></span>Running km</span>
+    </div>
+    <div class="fd-chart-wrap" style="height:220px">
+      <canvas id="fdDistChart"
+        data-labels='{{ $m.labels | jsonify }}'
+        data-values='{{ $m.run_distance_km | jsonify }}'
+        role="img" aria-label="Monthly running distance in km">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- pace vs recovery chart -->
+  <p class="fd-section-comment">pace_vs_recovery_score</p>
+  <div class="fd-chart-card">
+    <p class="fd-chart-title">avg run speed (km/h) vs weekly recovery score — monthly</p>
+    <div class="fd-legend">
+      <span><span class="fd-legend-dot" style="background:#00E5B4"></span>Run speed (km/h)</span>
+      <span><span class="fd-legend-dot" style="background:#7B61FF"></span>Recovery score</span>
+    </div>
+    <div class="fd-chart-wrap" style="height:230px">
+      <canvas id="fdPaceChart"
+        data-labels='{{ $m.labels | jsonify }}'
+        data-speed='{{ $m.avg_speed_kmh | jsonify }}'
+        data-recovery='{{ $m.recovery_score | jsonify }}'
+        role="img" aria-label="Run speed vs recovery score">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- donut + sessions -->
+  <div class="fd-two-col">
+    <div>
+      <p class="fd-section-comment">activity_mix</p>
+      <div class="fd-chart-card">
+        <p class="fd-chart-title">activity type split</p>
+        <div class="fd-chart-wrap" style="height:210px">
+          <canvas id="fdDonutChart" role="img" aria-label="Activity type distribution">Activity split.</canvas>
+        </div>
+        <div class="fd-legend" style="margin-top:10px;justify-content:center">
+          <span><span class="fd-legend-dot" style="background:#00E5B4"></span>Run {{ $d.activity_mix_pct.running }}%</span>
+          <span><span class="fd-legend-dot" style="background:#7B61FF"></span>Gym/HIIT {{ $d.activity_mix_pct.gym_hiit }}%</span>
+          <span><span class="fd-legend-dot" style="background:#F59E0B"></span>Ride {{ $d.activity_mix_pct.cycling }}%</span>
+          <span><span class="fd-legend-dot" style="background:#4A5568"></span>Other {{ $d.activity_mix_pct.other }}%</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="fd-section-comment">monthly_sessions</p>
+      <div class="fd-chart-card">
+        <p class="fd-chart-title">run sessions per month</p>
+        <div class="fd-chart-wrap" style="height:210px">
+          <canvas id="fdSessionsChart"
+            data-labels='{{ $m.labels | jsonify }}'
+            data-values='{{ $m.run_sessions | jsonify }}'
+            role="img" aria-label="Monthly run sessions">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- races table -->
+  <p class="fd-section-comment">race_results[]</p>
+  <div class="fd-chart-card">
+    <p class="fd-chart-title">named races · {{ $d.meta.period }}</p>
+    <table class="fd-race-table">
+      <thead>
+        <tr><th>event</th><th>date</th><th>distance</th><th>time</th><th>avg pace</th><th></th></tr>
+      </thead>
+      <tbody>
+        {{ range $d.races }}
+        <tr>
+          <td class="fd-race-name">{{ .name }}</td>
+          <td class="fd-muted fd-sm">{{ .date }}</td>
+          <td class="fd-race-dist">{{ .distance_km }} km</td>
+          <td class="fd-race-time">{{ .time }}</td>
+          <td class="fd-muted fd-sm fd-mono">{{ .avg_pace }}</td>
+          <td>{{ if .pr }}<span class="fd-badge">PR</span>{{ end }}</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- footer -->
+  <div class="fd-footer">
+    <span><span class="fd-dot"></span>{{ $d.meta.source }}</span>
+    <span>last sync: {{ $d.meta.last_sync }}</span>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function() {
+  Chart.defaults.color = '#8B95A8';
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.font.size = 11;
+  const gc = 'rgba(255,255,255,0.05)';
+  const tc = '#4A5568';
+
+  // Distance bar
+  const dc = document.getElementById('fdDistChart');
+  const dl = JSON.parse(dc.dataset.labels);
+  const dv = JSON.parse(dc.dataset.values);
+  new Chart(dc, {
+    type: 'bar',
+    data: { labels: dl, datasets: [{ data: dv, backgroundColor: dv.map(v => v >= 80 ? '#00E5B4' : 'rgba(0,229,180,0.35)'), borderRadius: 4, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw.toFixed(1) + ' km' } } }, scales: { x: { grid: { display: false }, ticks: { color: tc } }, y: { grid: { color: gc }, ticks: { color: tc, callback: v => v + ' km' }, border: { display: false } } } }
+  });
+
+  // Pace vs Recovery
+  const pc = document.getElementById('fdPaceChart');
+  const pl = JSON.parse(pc.dataset.labels);
+  const ps = JSON.parse(pc.dataset.speed);
+  const pr = JSON.parse(pc.dataset.recovery);
+  new Chart(pc, {
+    type: 'line',
+    data: { labels: pl, datasets: [
+      { data: ps, borderColor: '#00E5B4', backgroundColor: 'rgba(0,229,180,0.06)', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#00E5B4', yAxisID: 'y' },
+      { data: pr, borderColor: '#7B61FF', backgroundColor: 'transparent', borderDash: [5,3], tension: 0.4, pointRadius: 4, pointBackgroundColor: '#7B61FF', yAxisID: 'y1' }
+    ]},
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } }, scales: { x: { grid: { display: false }, ticks: { color: tc } }, y: { min: 6, max: 9, grid: { color: gc }, ticks: { color: tc }, border: { display: false } }, y1: { position: 'right', min: 50, max: 80, grid: { display: false }, ticks: { color: tc }, border: { display: false } } } }
+  });
+
+  // Donut
+  new Chart(document.getElementById('fdDonutChart'), {
+    type: 'doughnut',
+    data: { labels: ['Running','Gym & HIIT','Cycling','Other'], datasets: [{ data: [68,21,7,4], backgroundColor: ['#00E5B4','#7B61FF','#F59E0B','#4A5568'], borderWidth: 0, hoverOffset: 6 }] },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '68%', plugins: { legend: { display: false } } }
+  });
+
+  // Sessions bar
+  const sc = document.getElementById('fdSessionsChart');
+  const sl = JSON.parse(sc.dataset.labels);
+  const sv = JSON.parse(sc.dataset.values);
+  new Chart(sc, {
+    type: 'bar',
+    data: { labels: sl, datasets: [{ data: sv, backgroundColor: sv.map(v => v >= 20 ? '#7B61FF' : 'rgba(123,97,255,0.35)'), borderRadius: 4, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw + ' sessions' } } }, scales: { x: { grid: { display: false }, ticks: { color: tc } }, y: { grid: { color: gc }, ticks: { color: tc }, border: { display: false } } } }
+  });
+
+  // Load bar
+  const bar = document.getElementById('loadBar');
+  if (bar) {
+    const total = parseInt(bar.dataset.runs) + parseInt(bar.dataset.rides) + parseInt(bar.dataset.hiit);
+    bar.style.width = Math.min(100, Math.round((total / 40) * 100)) + '%';
+  }
+})();
+</script>

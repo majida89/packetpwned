@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "period": "Jul 2025 – Jun 2026",
+    "last_sync": "Jun 2026",
+    "source": "Garmin Connect + Strava"
+  },
+  "yearly": {
+    "total_run_km": 641,
+    "total_activities": 287,
+    "total_calories": 62000,
+    "best_month": "Jan 2026",
+    "best_month_km": 114,
+    "longest_run_km": 21.3,
+    "longest_run_label": "RAK Half Marathon",
+    "peak_pace_per_km": "3:29"
+  },
+  "monthly": {
+    "labels": ["Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun"],
+    "run_distance_km": [37.4, 46.9, 78.1, 100.2, 114.0, 65.6, 76.5, 80.1, 37.9, 83.3, 59.4, 15.7],
+    "run_sessions":    [17, 13, 15, 16, 23, 14, 22, 15, 8, 22, 12, 6],
+    "avg_speed_kmh":   [6.8, 7.1, 7.3, 7.5, 7.6, 7.3, 8.0, 7.9, 7.3, 7.2, 7.5, 7.9],
+    "recovery_score":  [65, 65, 58, 59, 62, 59, 70, 61, 58, 59, 67, 68]
+  },
+  "activity_mix_pct": {
+    "running": 68,
+    "gym_hiit": 21,
+    "cycling": 7,
+    "other": 4
+  },
+  "current_month": {
+    "label": "Jun 2026",
+    "runs": 6,
+    "rides": 4,
+    "hiit": 12,
+    "run_km": 15.7
+  },
+  "races": [
+    {
+      "name": "3 Emirates Run",
+      "date": "Oct 26, 2025",
+      "distance_km": 11.8,
+      "time": "51:20",
+      "avg_pace": "4:21/km",
+      "pr": false
+    },
+    {
+      "name": "ADNOC Abu Dhabi 10K",
+      "date": "Dec 13, 2025",
+      "distance_km": 10.5,
+      "time": "45:40",
+      "avg_pace": "4:21/km",
+      "pr": false
+    },
+    {
+      "name": "Sharjah Charity Run",
+      "date": "Mar 7, 2026",
+      "distance_km": 3.0,
+      "time": "17:37",
+      "avg_pace": "5:49/km",
+      "pr": false
+    },
+    {
+      "name": "RAK Half Marathon",
+      "date": "Feb 14, 2026",
+      "distance_km": 21.3,
+      "time": "2:45:21",
+      "avg_pace": "7:46/km",
+      "pr": true
+    },
+    {
+      "name": "One Run International",
+      "date": "May 23, 2026",
+      "distance_km": 10.0,
+      "time": "45:43",
+      "avg_pace": "4:33/km",
+      "pr": false
+    }
+  ]
+}
