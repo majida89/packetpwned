@@ -1,12 +1,12 @@
 {
   "meta": {
     "period": "Jul 2025 – Jun 2026",
-    "last_sync": "Jun 2026",
+    "last_sync": "Jun 29, 2026",
     "source": "Garmin Connect + Strava"
   },
   "yearly": {
-    "total_run_km": 641,
-    "total_activities": 287,
+    "total_run_km": 639,
+    "total_activities": 294,
     "total_calories": 62000,
     "best_month": "Jan 2026",
     "best_month_km": 114,
@@ -16,9 +16,9 @@
   },
   "monthly": {
     "labels": ["Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun"],
-    "run_distance_km": [37.4, 46.9, 78.1, 100.2, 114.0, 65.6, 76.5, 80.1, 37.9, 83.3, 59.4, 15.7],
-    "run_sessions":    [17, 13, 15, 16, 23, 14, 22, 15, 8, 22, 12, 6],
-    "avg_speed_kmh":   [6.8, 7.1, 7.3, 7.5, 7.6, 7.3, 8.0, 7.9, 7.3, 7.2, 7.5, 7.9],
+    "run_distance_km": [37.4, 46.9, 78.1, 100.2, 114.0, 65.6, 76.5, 80.1, 37.9, 83.3, 59.4, 13.3],
+    "run_sessions":    [17, 13, 15, 16, 23, 14, 22, 15, 8, 22, 12, 8],
+    "avg_speed_kmh":   [6.8, 7.1, 7.3, 7.5, 7.6, 7.3, 8.0, 7.9, 7.3, 7.2, 7.5, 6.8],
     "recovery_score":  [65, 65, 58, 59, 62, 59, 70, 61, 58, 59, 67, 68]
   },
   "activity_mix_pct": {
@@ -29,10 +29,10 @@
   },
   "current_month": {
     "label": "Jun 2026",
-    "runs": 6,
-    "rides": 4,
-    "hiit": 12,
-    "run_km": 15.7
+    "runs": 8,
+    "rides": 6,
+    "hiit": 15,
+    "run_km": 13.3
   },
   "races": [
     {
