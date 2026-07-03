@@ -158,7 +158,23 @@
   <!-- Navbar -->
   <nav class="navbar fixed top-4 left-4 right-4 z-50 rounded-2xl border border-border px-6 py-3">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="/" class="font-display text-2xl font-bold gradient-text">PacketPwned.</a>
+      <a href="/" class="flex items-center" aria-label="PacketPwned home">
+        <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6366F1"/>
+              <stop offset="100%" stop-color="#0EA5E9"/>
+            </linearGradient>
+          </defs>
+          <!-- Shield -->
+          <path d="M20 3 L32 8 L32 20 C32 28 20 34 20 34 C20 34 8 28 8 20 L8 8 Z" fill="none" stroke="url(#logo-grad)" stroke-width="1.5"/>
+          <!-- Lock icon inside shield -->
+          <rect x="14.5" y="19" width="11" height="9" rx="1.5" fill="none" stroke="url(#logo-grad)" stroke-width="1.2"/>
+          <path d="M17 19 L17 16.5 C17 14.5 23 14.5 23 16.5 L23 19" fill="none" stroke="url(#logo-grad)" stroke-width="1.2"/>
+          <!-- Wordmark -->
+          <text x="42" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#E2E8F0" letter-spacing="-0.4">Packet<tspan fill="url(#logo-grad)">Pwned</tspan></text>
+        </svg>
+      </a>
       <div class="hidden md:flex items-center gap-8">
         {{ range .Site.Menus.main }}
         <a href="{{ .URL }}" class="nav-link text-sm text-slate-400">{{ .Name }}</a>
