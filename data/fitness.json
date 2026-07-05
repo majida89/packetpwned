@@ -1,7 +1,7 @@
 {
   "meta": {
     "period": "Jul 2025 – Jun 2026",
-    "last_sync": "Jul 3, 2026",
+    "last_sync": "Jul 5, 2026",
     "source": "Garmin Connect + Strava"
   },
   "yearly": {
@@ -29,10 +29,10 @@
   },
   "current_month": {
     "label": "Jul 2026",
-    "runs": 0,
+    "runs": 1,
     "rides": 1,
     "hiit": 2,
-    "run_km": 0.0
+    "run_km": 3.3
   },
   "races": [
     {
