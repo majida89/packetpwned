@@ -1,6 +1,6 @@
 ---
-title: "Performance Log"
-description: "12 months of training data. Healthy body, healthy mind."
+title: "Healthy Body, Healthy Mind"
+description: "12 months of running, cycling, and strength training data. Tracking fitness alongside a career in network security."
 layout: "fitness"
 ---
 
