@@ -1,6 +1,6 @@
 ---
 title: "From Network Engineer to Pentester — Why I Started TryHackMe"
-date: 2025-07-11
+date: 2026-07-09
 draft: false
 tags: ["tryhackme", "pentesting", "networking", "career", "cybersecurity"]
 categories: ["journey"]
