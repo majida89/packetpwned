@@ -104,6 +104,32 @@
   </div>
 </section>
 
+<!-- Latest Blog Posts -->
+<section class="py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-baseline justify-between mb-10 reveal">
+      <div>
+        <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-2">// blog</p>
+        <h2 class="text-3xl font-bold text-white">Latest posts</h2>
+      </div>
+      <a href="/blog/" class="text-neon text-sm hover:text-indigo-300 transition-colors">View all →</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <div class="reveal project-card glass rounded-2xl p-6 border border-border">
+        <p class="font-mono text-xs text-neon mb-3">{{ .Date.Format "Jan 2006" }}</p>
+        <h3 class="text-base font-semibold text-white mb-2">{{ .Title }}</h3>
+        <p class="text-sm text-slate-400 leading-relaxed mb-4">{{ .Description }}</p>
+        <a href="{{ .Permalink }}" class="inline-flex items-center gap-1 text-neon text-sm font-medium hover:text-indigo-300 transition-colors">
+          Read post
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 <!-- Projects -->
 <section class="py-16 px-4">
   <div class="max-w-6xl mx-auto">
