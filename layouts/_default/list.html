@@ -1,33 +1,36 @@
 {{ define "main" }}
 <section class="relative px-4 pt-32 pb-24">
-  <div class="glow-blob w-72 h-72 bg-neon/10 top-10 -right-20 animate-float"></div>
-  <div class="max-w-4xl mx-auto">
+  <div class="glow-blob w-80 h-80 top-10 -right-20 animate-float" style="background:rgba(99,102,241,0.08);animation-delay:0s"></div>
+  <div class="max-w-4xl mx-auto relative z-10">
 
-    <div class="mb-12 reveal">
-      <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-3">// {{ .Section }}</p>
-      <h1 class="font-display text-5xl font-bold gradient-text">{{ .Title }}</h1>
+    <div class="mb-14 reveal">
+      <span class="section-label">{{ .Section }}</span>
+      <h1 class="text-5xl font-bold gradient-text" style="letter-spacing:-0.03em;font-family:'Space Grotesk',sans-serif">{{ .Title }}</h1>
+      {{ if .Description }}<p class="mt-3 text-sm" style="color:#64748B">{{ .Description }}</p>{{ end }}
     </div>
 
-    <ul class="space-y-4">
+    <ul class="space-y-3">
       {{ range .Pages }}
-      <li class="reveal project-card glass rounded-2xl border border-border overflow-hidden">
-        <a href="{{ .Permalink }}" class="flex items-start gap-6 p-6 group">
-          <div class="flex-shrink-0 text-right min-w-[80px]">
-            <p class="font-mono text-xs text-slate-500">{{ .Date.Format "02 Jan" }}</p>
-            <p class="font-mono text-xs text-slate-600">{{ .Date.Format "2006" }}</p>
-          </div>
-          <div class="flex-1">
-            <h2 class="text-base font-semibold text-white mb-1 group-hover:text-neon transition-colors duration-200">{{ .Title }}</h2>
-            <p class="text-sm text-slate-400 leading-relaxed">{{ .Description }}</p>
-            {{ if .Params.tags }}
-            <div class="flex flex-wrap gap-2 mt-3">
-              {{ range .Params.tags }}
-              <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-neon/10 text-neon/70 border border-neon/20">{{ . }}</span>
+      <li class="reveal">
+        <a href="{{ .Permalink }}" class="gcard project-card flex items-start gap-6 group" style="display:flex">
+          <div class="gcard-inner flex items-start gap-6 p-5 w-full">
+            <div class="flex-shrink-0 text-right" style="min-width:56px">
+              <p class="font-mono text-xs font-medium" style="color:#6366F1">{{ .Date.Format "Jan" }}</p>
+              <p class="font-mono text-xs" style="color:#334155">{{ .Date.Format "2006" }}</p>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h2 class="text-sm font-semibold mb-1 transition-colors duration-200" style="color:#E2E8F0">{{ .Title }}</h2>
+              <p class="text-xs leading-relaxed" style="color:#475569">{{ .Description }}</p>
+              {{ if .Params.tags }}
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                {{ range .Params.tags }}
+                <span class="font-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);color:rgba(99,102,241,0.8)">{{ . }}</span>
+                {{ end }}
+              </div>
               {{ end }}
             </div>
-            {{ end }}
+            <svg class="w-4 h-4 flex-shrink-0 mt-0.5 transition-all duration-200 group-hover:translate-x-1" style="color:#334155" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
-          <svg class="w-4 h-4 text-slate-600 group-hover:text-neon transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </li>
       {{ end }}

@@ -1,78 +1,112 @@
 {{ define "main" }}
 
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center justify-center px-4 pt-24">
-  <div class="glow-blob w-96 h-96 bg-neon/15 top-20 -left-32 animate-float" style="animation-delay:0s"></div>
-  <div class="glow-blob w-72 h-72 bg-accent/15 bottom-20 -right-20 animate-float" style="animation-delay:3s"></div>
+<section class="relative min-h-screen flex items-center px-4 pt-28 pb-16">
+  <div class="glow-blob w-[500px] h-[500px] top-0 -left-48 animate-float" style="background:rgba(99,102,241,0.12);animation-delay:0s"></div>
+  <div class="glow-blob w-80 h-80 bottom-0 -right-24 animate-float" style="background:rgba(6,182,212,0.08);animation-delay:3.5s"></div>
 
-  <div class="max-w-4xl mx-auto text-center relative z-10">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-neon/20 text-neon text-sm font-medium mb-8 animate-fade-in">
-      <span class="w-2 h-2 rounded-full bg-green-400 animate-glow inline-block"></span>
-      CCIE #55880 · CISSP · Pentester in progress
+  <div class="max-w-6xl mx-auto w-full relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div>
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full mb-8 animate-fade-in" style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2)">
+          <span class="w-1.5 h-1.5 rounded-full animate-glow" style="background:#10B981"></span>
+          <span class="font-mono text-xs" style="color:#10B981;letter-spacing:0.05em">CCIE #55880 · CISSP · Pentester in progress</span>
+        </div>
+
+        <h1 class="font-display leading-tight mb-5 animate-fade-up" style="font-size:clamp(3.5rem,8vw,5.5rem);font-weight:700;animation-delay:0.1s">
+          Hi, I'm<br>
+          <span class="gradient-text">Majid</span>
+        </h1>
+
+        <p class="text-base leading-relaxed mb-8 animate-fade-up" style="color:#94A3B8;max-width:480px;animation-delay:0.2s;opacity:0">
+          Senior Network &amp; Security Engineer based in the UAE. Building secure, resilient enterprise infrastructure — and learning to break it through TryHackMe.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-10 animate-fade-up" style="animation-delay:0.25s;opacity:0">
+          {{ range slice "CCIE #55880" "CISSP" "PCNSE" "NSE4" "CEH" "Security+" "ISO 27001" }}
+          <span class="cert-badge">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        <div class="flex flex-wrap gap-3 animate-fade-up" style="animation-delay:0.3s;opacity:0">
+          <a href="/writeups/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all duration-200"
+             style="background:linear-gradient(135deg,#6366F1,#4F46E5);box-shadow:0 0 24px rgba(99,102,241,0.3)"
+             onmouseover="this.style.boxShadow='0 0 36px rgba(99,102,241,0.5)';this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.boxShadow='0 0 24px rgba(99,102,241,0.3)';this.style.transform='translateY(0)'">
+            View Writeups
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="/blog/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
+             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
+             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">Blog</a>
+          <a href="/fitness/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
+             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
+             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">💪 Fitness</a>
+          <a href="https://www.linkedin.com/in/majid-information-security/" target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
+             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
+             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <!-- Right: Terminal -->
+      <div class="animate-fade-up" style="animation-delay:0.4s;opacity:0">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="terminal-title">majid@packetpwned:~$</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;whoami</span></div>
+            <div class="t-output" style="color:#CBD5E1">Majid Ahmed — Senior Network &amp; Security Engineer</div>
+            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;cat certs.txt</span></div>
+            <div class="t-output">CCIE #55880 · CISSP · PCNSE · NSE4 · CEH</div>
+            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;echo $CURRENT_MISSION</span></div>
+            <div class="t-success">TryHackMe Jr. Pentester — Top 6% · 48-day streak</div>
+            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;uptime --career</span></div>
+            <div class="t-output">10+ years in network &amp; security engineering</div>
+            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;ping packetpwned.com</span></div>
+            <div class="t-success">PONG — site is live &amp; always learning</div>
+            <div class="t-line mt-2"><span class="t-prompt">❯</span>&nbsp;<span class="t-cursor"></span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight mb-6 animate-fade-up" style="animation-delay:0.1s">
-      Hi, I'm
-      <span class="gradient-text block">Majid</span>
-    </h1>
-
-    <p class="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up" style="animation-delay:0.2s; opacity:0">
-      Senior Network &amp; Security Engineer · UAE. Building secure, resilient enterprise infrastructure.
-      Exploring offensive security through TryHackMe. Designing networks that hold.
-    </p>
-
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-10 animate-fade-up" style="animation-delay:0.25s; opacity:0">
-      {{ range slice "CCIE #55880" "CISSP" "PCNSE" "NSE4" "CEH" "Security+" "ISO 27001" }}
-      <span class="font-mono text-xs px-3 py-1 rounded-full border border-neon/25 text-neon/80 bg-neon/5">{{ . }}</span>
-      {{ end }}
-    </div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay:0.3s; opacity:0">
-      <a href="/writeups/"
-         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-neon text-white font-semibold hover:bg-indigo-500 transition-colors duration-200 shadow-lg shadow-neon/25">
-        View Writeups
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
-      <a href="/fitness/"
-         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl glass border border-border text-slate-300 font-semibold hover:border-neon/40 hover:text-white transition-all duration-200">
-        💪 Fitness
-      </a>
-      <a href="/blog/"
-         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl glass border border-border text-slate-300 font-semibold hover:border-neon/40 hover:text-white transition-all duration-200">
-        Blog
-      </a>
-      <a href="https://www.linkedin.com/in/majid-information-security/" target="_blank"
-         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl glass border border-border text-slate-300 font-semibold hover:border-neon/40 hover:text-white transition-all duration-200">
-        LinkedIn ↗
-      </a>
-    </div>
-
-    <div class="mt-20 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay:1s; opacity:0">
-      <span class="text-xs text-slate-600 tracking-widest uppercase font-mono">Scroll</span>
-      <div class="w-px h-10 bg-gradient-to-b from-neon/50 to-transparent"></div>
+    <div class="mt-20 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay:1.2s;opacity:0">
+      <span class="font-mono text-xs tracking-widest uppercase" style="color:#334155">Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
 <section class="py-16 px-4">
-  <div class="max-w-4xl mx-auto reveal">
+  <div class="max-w-5xl mx-auto reveal">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="glass rounded-2xl p-6 text-center border border-border project-card">
-        <p class="font-display text-3xl font-bold gradient-text">10+</p>
-        <p class="text-xs text-slate-500 mt-1 font-mono">Years experience</p>
+      <div class="stat-card project-card">
+        <p class="font-display text-3xl font-bold gradient-text mb-1">10+</p>
+        <p class="font-mono text-xs" style="color:#475569">Years experience</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center border border-border project-card">
-        <p class="font-display text-3xl font-bold gradient-text">7</p>
-        <p class="text-xs text-slate-500 mt-1 font-mono">Active certs</p>
+      <div class="stat-card project-card">
+        <p class="font-display text-3xl font-bold gradient-text mb-1">7</p>
+        <p class="font-mono text-xs" style="color:#475569">Active certs</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center border border-border project-card">
-        <p class="font-display text-2xl font-bold gradient-text">Jr. Pentester</p>
-        <p class="text-xs text-slate-500 mt-1 font-mono">TryHackMe · Active</p>
+      <div class="stat-card project-card">
+        <p class="font-display text-2xl font-bold gradient-text-green mb-1">Top 6%</p>
+        <p class="font-mono text-xs" style="color:#475569">TryHackMe rank</p>
       </div>
-      <div class="glass rounded-2xl p-6 text-center border border-border project-card">
-        <p class="font-display text-2xl font-bold gradient-text">Alphadata</p>
-        <p class="text-xs text-slate-500 mt-1 font-mono">Jan 2023 – present</p>
+      <div class="stat-card project-card">
+        <p class="font-display text-xl font-bold gradient-text mb-1">Alphadata</p>
+        <p class="font-mono text-xs" style="color:#475569">Jan 2023 – present</p>
       </div>
     </div>
   </div>
@@ -81,23 +115,27 @@
 <!-- Latest Writeups -->
 <section class="py-16 px-4">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-baseline justify-between mb-10 reveal">
+    <div class="flex items-end justify-between mb-10 reveal">
       <div>
-        <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-2">// writeups</p>
-        <h2 class="text-3xl font-bold text-white">Latest writeups</h2>
+        <span class="section-label">writeups</span>
+        <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Latest writeups</h2>
       </div>
-      <a href="/writeups/" class="text-neon text-sm hover:text-indigo-300 transition-colors">View all →</a>
+      <a href="/writeups/" class="font-mono text-xs transition-colors" style="color:#6366F1"
+         onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">View all →</a>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-5">
       {{ range first 3 (where .Site.RegularPages "Section" "writeups") }}
-      <div class="reveal project-card glass rounded-2xl p-6 border border-border">
-        <p class="font-mono text-xs text-neon mb-3">{{ .Date.Format "Jan 2006" }}</p>
-        <h3 class="text-base font-semibold text-white mb-2">{{ .Title }}</h3>
-        <p class="text-sm text-slate-400 leading-relaxed mb-4">{{ .Description }}</p>
-        <a href="{{ .Permalink }}" class="inline-flex items-center gap-1 text-neon text-sm font-medium hover:text-indigo-300 transition-colors">
-          Read writeup
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
+      <div class="reveal gcard project-card">
+        <div class="gcard-inner p-6">
+          <p class="font-mono text-xs mb-3" style="color:#6366F1">{{ .Date.Format "Jan 2006" }}</p>
+          <h3 class="text-sm font-semibold mb-2 leading-snug" style="color:#F1F5F9">{{ .Title }}</h3>
+          <p class="text-xs leading-relaxed mb-5" style="color:#64748B">{{ .Description }}</p>
+          <a href="{{ .Permalink }}" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors" style="color:#6366F1"
+             onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">
+            Read writeup
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
       </div>
       {{ end }}
     </div>
@@ -107,23 +145,27 @@
 <!-- Latest Blog Posts -->
 <section class="py-16 px-4">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-baseline justify-between mb-10 reveal">
+    <div class="flex items-end justify-between mb-10 reveal">
       <div>
-        <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-2">// blog</p>
-        <h2 class="text-3xl font-bold text-white">Latest posts</h2>
+        <span class="section-label">blog</span>
+        <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Latest posts</h2>
       </div>
-      <a href="/blog/" class="text-neon text-sm hover:text-indigo-300 transition-colors">View all →</a>
+      <a href="/blog/" class="font-mono text-xs transition-colors" style="color:#6366F1"
+         onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">View all →</a>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-5">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <div class="reveal project-card glass rounded-2xl p-6 border border-border">
-        <p class="font-mono text-xs text-neon mb-3">{{ .Date.Format "Jan 2006" }}</p>
-        <h3 class="text-base font-semibold text-white mb-2">{{ .Title }}</h3>
-        <p class="text-sm text-slate-400 leading-relaxed mb-4">{{ .Description }}</p>
-        <a href="{{ .Permalink }}" class="inline-flex items-center gap-1 text-neon text-sm font-medium hover:text-indigo-300 transition-colors">
-          Read post
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
+      <div class="reveal gcard project-card">
+        <div class="gcard-inner p-6">
+          <p class="font-mono text-xs mb-3" style="color:#06B6D4">{{ .Date.Format "Jan 2006" }}</p>
+          <h3 class="text-sm font-semibold mb-2 leading-snug" style="color:#F1F5F9">{{ .Title }}</h3>
+          <p class="text-xs leading-relaxed mb-5" style="color:#64748B">{{ .Description }}</p>
+          <a href="{{ .Permalink }}" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors" style="color:#06B6D4"
+             onmouseover="this.style.color='#67E8F9'" onmouseout="this.style.color='#06B6D4'">
+            Read post
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
       </div>
       {{ end }}
     </div>
@@ -133,28 +175,38 @@
 <!-- Projects -->
 <section class="py-16 px-4">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-baseline justify-between mb-10 reveal">
-      <div>
-        <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-2">// projects</p>
-        <h2 class="text-3xl font-bold text-white">Notable projects</h2>
-      </div>
+    <div class="mb-10 reveal">
+      <span class="section-label">projects</span>
+      <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Notable projects</h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="reveal project-card glass rounded-2xl p-6 border border-border">
-        <div class="w-10 h-10 rounded-xl bg-neon/15 border border-neon/25 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="reveal gcard project-card">
+        <div class="gcard-inner p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2)">
+              <svg class="w-5 h-5" style="color:#6366F1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <p class="font-mono text-xs mb-1" style="color:#475569">Palo Alto Networks</p>
+              <h3 class="text-base font-semibold mb-2" style="color:#F1F5F9">PA-3000 → PA-5000 Migration</h3>
+              <p class="text-sm" style="color:#64748B;line-height:1.7">Full lifecycle firewall migration with policy cleanup, zone redesign, and zero-downtime cutover across enterprise sites.</p>
+            </div>
+          </div>
         </div>
-        <p class="font-mono text-xs text-slate-500 mb-2">Palo Alto</p>
-        <h3 class="text-base font-semibold text-white mb-2">PA-3000 → PA-5000 Migration</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Full lifecycle firewall migration with policy cleanup, zone redesign, and zero-downtime cutover.</p>
       </div>
-      <div class="reveal project-card glass rounded-2xl p-6 border border-border" style="transition-delay:0.1s">
-        <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <div class="reveal gcard project-card" style="transition-delay:0.1s">
+        <div class="gcard-inner p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2)">
+              <svg class="w-5 h-5" style="color:#06B6D4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <p class="font-mono text-xs mb-1" style="color:#475569">Data Center Network</p>
+              <h3 class="text-base font-semibold mb-2" style="color:#F1F5F9">Cisco → Arista Migration</h3>
+              <p class="text-sm" style="color:#64748B;line-height:1.7">Enterprise data center migration with BGP, VRF, and MPLS re-architecture for improved performance and resilience.</p>
+            </div>
+          </div>
         </div>
-        <p class="font-mono text-xs text-slate-500 mb-2">Network</p>
-        <h3 class="text-base font-semibold text-white mb-2">Cisco → Arista Migration</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Enterprise data center migration with BGP, VRF, and MPLS re-architecture.</p>
       </div>
     </div>
   </div>

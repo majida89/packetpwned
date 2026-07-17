@@ -1,32 +1,39 @@
 {{ define "main" }}
 <section class="relative px-4 pt-32 pb-24">
-  <div class="glow-blob w-72 h-72 bg-neon/10 top-10 -left-20 animate-float"></div>
-  <div class="max-w-3xl mx-auto">
+  <div class="glow-blob w-72 h-72 top-10 -left-20 animate-float" style="background:rgba(99,102,241,0.08);animation-delay:0s"></div>
+  <div class="glow-blob w-48 h-48 bottom-20 -right-10 animate-float" style="background:rgba(6,182,212,0.06);animation-delay:4s"></div>
+  <div class="max-w-3xl mx-auto relative z-10">
 
-    <header class="mb-12 reveal">
+    <header class="mb-10 reveal">
       {{ if and .Section (ne .Section "") }}
-      <a href="/{{ .Section }}/" class="inline-flex items-center gap-1 font-mono text-xs text-neon/70 hover:text-neon transition-colors mb-6">
+      <a href="/{{ .Section }}/" class="inline-flex items-center gap-1.5 font-mono text-xs mb-6 transition-colors"
+         style="color:rgba(99,102,241,0.6)"
+         onmouseover="this.style.color='#6366F1'" onmouseout="this.style.color='rgba(99,102,241,0.6)'">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        {{ .Section }}
+        Back to {{ .Section }}
       </a>
       {{ end }}
-      <p class="text-neon text-sm font-semibold tracking-widest uppercase font-mono mb-3">// {{ .Section }}</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">{{ .Title }}</h1>
-      <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 font-mono">
-        {{ if not .Date.IsZero }}<span>{{ .Date.Format "02 January 2006" }}</span>{{ end }}
+      <span class="section-label">{{ .Section }}</span>
+      <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-5" style="color:#F1F5F9;letter-spacing:-0.02em;font-family:'Space Grotesk',sans-serif">{{ .Title }}</h1>
+      <div class="flex flex-wrap items-center gap-3">
+        {{ if not .Date.IsZero }}
+        <span class="font-mono text-xs px-3 py-1 rounded-full" style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);color:#6366F1">
+          {{ .Date.Format "02 January 2006" }}
+        </span>
+        {{ end }}
         {{ if .Params.tags }}
-        <span class="text-slate-700">·</span>
-        <div class="flex flex-wrap gap-2">
-          {{ range .Params.tags }}
-          <span class="text-xs px-2 py-0.5 rounded-full bg-neon/10 text-neon/70 border border-neon/20">{{ . }}</span>
-          {{ end }}
-        </div>
+        {{ range .Params.tags }}
+        <span class="font-mono text-xs px-2.5 py-1 rounded-full" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#475569">{{ . }}</span>
+        {{ end }}
         {{ end }}
       </div>
     </header>
 
-    <div class="glass rounded-2xl border border-border p-8 reveal prose-packetpwned">
-      {{ .Content }}
+    <div class="reveal" style="position:relative">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6366F1,#06B6D4,transparent);border-radius:2px 2px 0 0"></div>
+      <div class="prose-packetpwned" style="background:#0A0A18;border:1px solid rgba(99,102,241,0.12);border-radius:16px;padding:2.5rem;padding-top:2.75rem">
+        {{ .Content }}
+      </div>
     </div>
 
   </div>
