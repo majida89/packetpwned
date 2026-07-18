@@ -1,221 +1,210 @@
 {{ define "main" }}
 
-<!-- Hero -->
-<section class="relative min-h-screen flex items-center px-4 pt-28 pb-16">
-  <div class="glow-blob w-[500px] h-[500px] top-0 -left-48 animate-float" style="background:rgba(99,102,241,0.12);animation-delay:0s"></div>
-  <div class="glow-blob w-80 h-80 bottom-0 -right-24 animate-float" style="background:rgba(6,182,212,0.08);animation-delay:3.5s"></div>
-
-  <div class="max-w-6xl mx-auto w-full relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-      <!-- Left: Text -->
-      <div>
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full mb-8 animate-fade-in" style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2)">
-          <span class="w-1.5 h-1.5 rounded-full animate-glow" style="background:#10B981"></span>
-          <span class="font-mono text-xs" style="color:#10B981;letter-spacing:0.05em">CCIE #55880 · CISSP · Pentester in progress</span>
-        </div>
-
-        <h1 class="font-display leading-none mb-5 animate-fade-up" style="font-size:clamp(2.8rem,7vw,5rem);font-weight:700;animation-delay:0.1s;overflow:visible;padding-right:0.15em">
-          <span style="display:block;margin-bottom:0.05em">Hi, I'm</span>
-          <span class="gradient-text" style="display:block;overflow:visible;padding-right:0.2em">Majid</span>
-        </h1>
-
-        <p class="text-base leading-relaxed mb-8 animate-fade-up" style="color:#94A3B8;max-width:480px;animation-delay:0.2s;opacity:0">
-          Senior Network &amp; Security Engineer based in the UAE. Building secure, resilient enterprise infrastructure — and learning to break it through TryHackMe.
-        </p>
-
-        <div class="flex flex-wrap gap-2 mb-10 animate-fade-up" style="animation-delay:0.25s;opacity:0">
-          {{ range slice "CCIE #55880" "CISSP" "PCNSE" "NSE4" "CEH" "Security+" "ISO 27001" }}
-          <span class="cert-badge">{{ . }}</span>
-          {{ end }}
-        </div>
-
-        <div class="flex flex-wrap gap-3 animate-fade-up" style="animation-delay:0.3s;opacity:0">
-          <a href="/writeups/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all duration-200"
-             style="background:linear-gradient(135deg,#6366F1,#4F46E5);box-shadow:0 0 24px rgba(99,102,241,0.3)"
-             onmouseover="this.style.boxShadow='0 0 36px rgba(99,102,241,0.5)';this.style.transform='translateY(-1px)'"
-             onmouseout="this.style.boxShadow='0 0 24px rgba(99,102,241,0.3)';this.style.transform='translateY(0)'">
-            View Writeups
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="/blog/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
-             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
-             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
-             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">Blog</a>
-          <a href="/fitness/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
-             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
-             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
-             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">💪 Fitness</a>
-          <a href="https://www.linkedin.com/in/majid-information-security/" target="_blank"
-             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
-             style="background:rgba(16,16,32,0.8);border:1px solid rgba(99,102,241,0.25);color:#CBD5E1"
-             onmouseover="this.style.borderColor='rgba(99,102,241,0.5)';this.style.color='#fff'"
-             onmouseout="this.style.borderColor='rgba(99,102,241,0.25)';this.style.color='#CBD5E1'">LinkedIn ↗</a>
-        </div>
-      </div>
-
-      <!-- Right: Terminal -->
-      <div class="animate-fade-up" style="animation-delay:0.4s;opacity:0">
-        <div class="terminal-window">
-          <div class="terminal-bar">
-            <span class="t-dot t-red"></span>
-            <span class="t-dot t-yellow"></span>
-            <span class="t-dot t-green"></span>
-            <span class="terminal-title">majid@packetpwned:~$</span>
-          </div>
-          <div class="terminal-body">
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;whoami</span></div>
-            <div class="t-output" style="color:#CBD5E1">Majid Ahmed — Senior Network &amp; Security Engineer</div>
-            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;cat certs.txt</span></div>
-            <div class="t-output">CCIE #55880 · CISSP · PCNSE · NSE4 · CEH</div>
-            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;echo $CURRENT_MISSION</span></div>
-            <div class="t-success">TryHackMe Jr. Pentester — Top 6% · 48-day streak</div>
-            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;uptime --career</span></div>
-            <div class="t-output">10+ years in network &amp; security engineering</div>
-            <div class="t-line mt-2"><span class="t-prompt">❯</span><span class="t-cmd">&nbsp;ping packetpwned.com</span></div>
-            <div class="t-success">PONG — site is live &amp; always learning</div>
-            <div class="t-line mt-2"><span class="t-prompt">❯</span>&nbsp;<span class="t-cursor"></span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-20 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay:1.2s;opacity:0">
-      <span class="font-mono text-xs tracking-widest uppercase" style="color:#334155">Scroll</span>
-      <div class="scroll-line"></div>
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <svg id="topo" aria-hidden="true"></svg>
+  <div class="hero-inner">
+    <span class="eyebrow">SENIOR NETWORK &amp; SECURITY ENGINEER — UAE · PENTESTER IN PROGRESS</span>
+    <h1>Designing<br><span class="amber">Secure</span> &amp; <span class="outline">Resilient</span><br>Networks</h1>
+    <p class="hero-sub">I'm <strong>Majid Ahmed</strong> — CCIE #55880, CISSP. I build and defend enterprise infrastructure across the Emirates: <strong>Palo Alto NGFW &amp; Panorama, SD-WAN, BGP/MPLS, Zero Trust</strong> — and I'm learning to break what I build through TryHackMe.</p>
+    <div class="cli"><span class="prompt">majid@packetpwned&gt;</span> <span id="typed">show interface trust | match up</span><span class="cursor"></span></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/writeups/">Read the writeups →</a>
+      <a class="btn btn-ghost" href="/blog/">Blog</a>
+      <a class="btn btn-ghost" href="/fitness/">Fitness telemetry</a>
     </div>
   </div>
-</section>
+</header>
 
-<!-- Stats -->
-<section class="py-16 px-4">
-  <div class="max-w-5xl mx-auto reveal">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="stat-card project-card">
-        <p class="font-display text-3xl font-bold gradient-text mb-1">10+</p>
-        <p class="font-mono text-xs" style="color:#475569">Years experience</p>
-      </div>
-      <div class="stat-card project-card">
-        <p class="font-display text-3xl font-bold gradient-text mb-1">7</p>
-        <p class="font-mono text-xs" style="color:#475569">Active certs</p>
-      </div>
-      <div class="stat-card project-card">
-        <p class="font-display text-2xl font-bold gradient-text-green mb-1">Top 6%</p>
-        <p class="font-mono text-xs" style="color:#475569">TryHackMe rank</p>
-      </div>
-      <div class="stat-card project-card">
-        <p class="font-display text-xl font-bold gradient-text mb-1">Alphadata</p>
-        <p class="font-mono text-xs" style="color:#475569">Jan 2023 – present</p>
-      </div>
-    </div>
+<!-- ================= CERT TICKER ================= -->
+<div class="certs" aria-label="Certifications">
+  <div class="certs-track" id="certTrack">
+    <span class="cert"><span class="tick">▮</span> <b>CCIE</b> #55880</span>
+    <span class="cert"><span class="tick">▮</span> <b>CISSP</b> Certified</span>
+    <span class="cert"><span class="tick">▮</span> <b>PCNSE</b> Palo Alto Networks</span>
+    <span class="cert"><span class="tick">▮</span> <b>NSE4</b> Fortinet</span>
+    <span class="cert"><span class="tick">▮</span> <b>CEH</b> Certified Ethical Hacker</span>
+    <span class="cert"><span class="tick">▮</span> <b>Security+</b> CompTIA</span>
+    <span class="cert"><span class="tick">▮</span> <b>ISO 27001</b> Lead Implementer</span>
   </div>
-</section>
+</div>
 
-<!-- Latest Writeups -->
-<section class="py-16 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex items-end justify-between mb-10 reveal">
-      <div>
-        <span class="section-label">writeups</span>
-        <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Latest writeups</h2>
-      </div>
-      <a href="/writeups/" class="font-mono text-xs transition-colors" style="color:#6366F1"
-         onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">View all →</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      {{ range first 3 (where .Site.RegularPages "Section" "writeups") }}
-      <div class="reveal gcard project-card">
-        <div class="gcard-inner p-6">
-          <p class="font-mono text-xs mb-3" style="color:#6366F1">{{ .Date.Format "Jan 2006" }}</p>
-          <h3 class="text-sm font-semibold mb-2 leading-snug" style="color:#F1F5F9">{{ .Title }}</h3>
-          <p class="text-xs leading-relaxed mb-5" style="color:#64748B">{{ .Description }}</p>
-          <a href="{{ .Permalink }}" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors" style="color:#6366F1"
-             onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">
-            Read writeup
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-      </div>
+<!-- ================= WRITEUPS ================= -->
+<section id="writeups">
+  <div class="wrap">
+    <div class="sec-label">01 · TryHackMe Writeups</div>
+    <h2 class="sec-title reveal">Learning to think like the attacker</h2>
+    <div class="post-list reveal">
+      {{ range first 4 (where .Site.RegularPages "Section" "writeups") }}
+      <a class="post" href="{{ .Permalink }}">
+        <span class="meta"><span class="m">{{ .Date.Format "Jan 02" }}</span><br>{{ .Date.Format "2006" }}</span>
+        <span>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+        </span>
+        <span class="arrow">-&gt;</span>
+      </a>
       {{ end }}
     </div>
+    <a class="more-link" href="/writeups/">All writeups →</a>
   </div>
 </section>
 
-<!-- Latest Blog Posts -->
-<section class="py-16 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex items-end justify-between mb-10 reveal">
-      <div>
-        <span class="section-label">blog</span>
-        <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Latest posts</h2>
-      </div>
-      <a href="/blog/" class="font-mono text-xs transition-colors" style="color:#6366F1"
-         onmouseover="this.style.color='#818CF8'" onmouseout="this.style.color='#6366F1'">View all →</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <div class="reveal gcard project-card">
-        <div class="gcard-inner p-6">
-          <p class="font-mono text-xs mb-3" style="color:#06B6D4">{{ .Date.Format "Jan 2006" }}</p>
-          <h3 class="text-sm font-semibold mb-2 leading-snug" style="color:#F1F5F9">{{ .Title }}</h3>
-          <p class="text-xs leading-relaxed mb-5" style="color:#64748B">{{ .Description }}</p>
-          <a href="{{ .Permalink }}" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors" style="color:#06B6D4"
-             onmouseover="this.style.color='#67E8F9'" onmouseout="this.style.color='#06B6D4'">
-            Read post
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-      </div>
+<!-- ================= BLOG ================= -->
+<section id="blog" class="band">
+  <div class="wrap">
+    <div class="sec-label">02 · Field Notes</div>
+    <h2 class="sec-title reveal">Written from production, not the datasheet</h2>
+    <div class="post-list reveal">
+      {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+      <a class="post" href="{{ .Permalink }}">
+        <span class="meta"><span class="m">{{ .Date.Format "Jan 02" }}</span><br>{{ .Date.Format "2006" }}</span>
+        <span>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+        </span>
+        <span class="arrow">-&gt;</span>
+      </a>
       {{ end }}
     </div>
+    <a class="more-link" href="/blog/">All posts →</a>
   </div>
 </section>
 
-<!-- Projects -->
-<section class="py-16 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="mb-10 reveal">
-      <span class="section-label">projects</span>
-      <h2 class="text-3xl font-bold" style="color:#F1F5F9;letter-spacing:-0.02em">Notable projects</h2>
+<!-- ================= FITNESS ================= -->
+{{ $f := hugo.Data.fitness }}
+<section id="fitness">
+  <div class="wrap">
+    <div class="sec-label">03 · Off-Duty Telemetry</div>
+    <div class="fit-grid">
+      <div class="fit-copy reveal">
+        <h2 class="sec-title">Engineered endurance</h2>
+        <p>Networks aren't the only thing I monitor. Every run, ride, and strength session gets logged and published as a <strong>privacy-safe dashboard</strong> built from Garmin and Strava data — {{ $f.yearly.total_activities }} activities and {{ $f.yearly.total_run_km }} km of running in the last 12 months.</p>
+        <p>Longest effort: the <strong>{{ $f.yearly.longest_run_label }}</strong> at {{ $f.yearly.longest_run_km }} km. Uptime matters — for the infrastructure and for the engineer running it.</p>
+        <a class="btn btn-primary" href="/fitness/" style="margin-top:10px">View the dashboard →</a>
+      </div>
+      <div class="telemetry reveal" aria-label="Training telemetry">
+        <div class="t-head"><span>athlete/majid — {{ $f.meta.period }}</span><span>● SYNCED</span></div>
+        <div class="t-row"><span class="lbl">run_distance</span><span class="val up">{{ $f.yearly.total_run_km }} km</span></div>
+        <div class="t-row"><span class="lbl">activities</span><span class="val">{{ $f.yearly.total_activities }}</span></div>
+        <div class="t-row"><span class="lbl">best_month</span><span class="val">{{ $f.yearly.best_month }} · {{ $f.yearly.best_month_km }} km</span></div>
+        <div class="t-row"><span class="lbl">longest_run</span><span class="val up">{{ $f.yearly.longest_run_label }} · {{ $f.yearly.longest_run_km }} km</span></div>
+        <div class="t-row"><span class="lbl">data_source</span><span class="val">{{ $f.meta.source }}</span></div>
+      </div>
     </div>
-    <div class="grid md:grid-cols-2 gap-5">
-      <div class="reveal gcard project-card">
-        <div class="gcard-inner p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2)">
-              <svg class="w-5 h-5" style="color:#6366F1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <div>
-              <p class="font-mono text-xs mb-1" style="color:#475569">Palo Alto Networks</p>
-              <h3 class="text-base font-semibold mb-2" style="color:#F1F5F9">PA-3000 → PA-5000 Migration</h3>
-              <p class="text-sm" style="color:#64748B;line-height:1.7">Full lifecycle firewall migration with policy cleanup, zone redesign, and zero-downtime cutover across enterprise sites.</p>
-            </div>
-          </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT / CONTACT ================= -->
+<section id="about" class="band">
+  <div class="wrap">
+    <div class="sec-label">04 · whoami</div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <h2 class="sec-title">A decade in UAE enterprise networking</h2>
+        <p><strong>10+ years</strong> designing and securing enterprise-grade infrastructure in the Emirates — eight of them at <strong>EITC (du)</strong>, from service activation through the NOC to core network, and since 2023 as Senior Network &amp; Security Engineer at <strong>Alpha Data</strong>.</p>
+        <p>Focus: BGP, MPLS, VRF, OSPF, SD-WAN · Palo Alto NGFW / Panorama · network automation (NETCONF/RESTCONF, YANG, Python) · Zero Trust architecture · and the TryHackMe Junior Pentester path, because knowing how to build a wall and knowing how someone climbs over it are different skills.</p>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn btn-primary" href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+          <a class="btn btn-ghost" href="/about/">Full profile</a>
         </div>
       </div>
-      <div class="reveal gcard project-card" style="transition-delay:0.1s">
-        <div class="gcard-inner p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2)">
-              <svg class="w-5 h-5" style="color:#06B6D4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            </div>
-            <div>
-              <p class="font-mono text-xs mb-1" style="color:#475569">Data Center Network</p>
-              <h3 class="text-base font-semibold mb-2" style="color:#F1F5F9">Cisco → Arista Migration</h3>
-              <p class="text-sm" style="color:#64748B;line-height:1.7">Enterprise data center migration with BGP, VRF, and MPLS re-architecture for improved performance and resilience.</p>
-            </div>
-          </div>
-        </div>
+      <div class="fact-stack reveal">
+        <div class="fact"><span class="k">Role</span><span class="v">Sr. Network &amp; Security Eng.</span></div>
+        <div class="fact"><span class="k">Company</span><span class="v">Alpha Data</span></div>
+        <div class="fact"><span class="k">Experience</span><span class="v amber">10+ Years</span></div>
+        <div class="fact"><span class="k">CCIE</span><span class="v amber">#55880</span></div>
+        <div class="fact"><span class="k">Current path</span><span class="v cyan">Jr Pentester</span></div>
+        <div class="fact"><span class="k">Base</span><span class="v">United Arab Emirates</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-window.addEventListener('load', () => {
-  document.querySelectorAll('[style*="opacity:0"]').forEach(el => { el.style.opacity = ''; });
-});
-</script>
+/* animated topology hero */
+(function(){
+  const svg=document.getElementById('topo');
+  const NS='http://www.w3.org/2000/svg';
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,nodes=[],links=[],packets=[];
+  function build(){
+    svg.innerHTML='';W=innerWidth;H=svg.clientHeight||innerHeight;
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    const count=Math.max(10,Math.floor(W/110));
+    nodes=[];links=[];packets=[];
+    for(let i=0;i<count;i++){nodes.push({x:Math.random()*W,y:Math.random()*H,hub:Math.random()<.2});}
+    nodes.forEach((n,i)=>{
+      const d=nodes.map((m,j)=>({j,dist:Math.hypot(n.x-m.x,n.y-m.y)}))
+        .filter(o=>o.j!==i).sort((a,b)=>a.dist-b.dist).slice(0,2);
+      d.forEach(o=>{if(!links.some(l=>(l.a===i&&l.b===o.j)||(l.a===o.j&&l.b===i)))links.push({a:i,b:o.j});});
+    });
+    links.forEach(l=>{
+      const el=document.createElementNS(NS,'line');
+      const A=nodes[l.a],B=nodes[l.b];
+      el.setAttribute('x1',A.x);el.setAttribute('y1',A.y);
+      el.setAttribute('x2',B.x);el.setAttribute('y2',B.y);
+      el.setAttribute('stroke','#1E2C47');el.setAttribute('stroke-width','1');
+      svg.appendChild(el);
+    });
+    nodes.forEach(n=>{
+      const c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);
+      c.setAttribute('r',n.hub?4:2.2);
+      c.setAttribute('fill',n.hub?'#FFB020':'#2A3B5C');
+      if(n.hub)c.setAttribute('opacity','.85');
+      svg.appendChild(c);
+    });
+    if(!reduced){
+      for(let i=0;i<Math.min(7,links.length);i++){
+        const l=links[Math.floor(Math.random()*links.length)];
+        const p=document.createElementNS(NS,'circle');
+        p.setAttribute('r','2.5');
+        p.setAttribute('fill',Math.random()<.5?'#53C8F5':'#FFB020');
+        svg.appendChild(p);
+        packets.push({el:p,l,t:Math.random(),speed:.002+Math.random()*.004,dir:1});
+      }
+    }
+  }
+  function tick(){
+    packets.forEach(p=>{
+      p.t+=p.speed*p.dir;
+      if(p.t>1||p.t<0){p.dir*=-1;p.t=Math.max(0,Math.min(1,p.t));
+        if(Math.random()<.3){p.l=links[Math.floor(Math.random()*links.length)];}
+      }
+      const A=nodes[p.l.a],B=nodes[p.l.b];
+      p.el.setAttribute('cx',A.x+(B.x-A.x)*p.t);
+      p.el.setAttribute('cy',A.y+(B.y-A.y)*p.t);
+    });
+    if(!reduced)requestAnimationFrame(tick);
+  }
+  build();if(!reduced)tick();
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,300)});
+})();
 
+/* typed CLI loop */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const cmds=[
+    'show interface trust | match up',
+    'show routing protocol bgp summary',
+    'john --wordlist=rockyou.txt hash.txt',
+    'request high-availability state peer',
+    'dig +short packetpwned.com A',
+    'commit — 0 warnings, 0 errors'
+  ];
+  const el=document.getElementById('typed');let ci=0,pos=0,del=false;
+  function step(){
+    const cmd=cmds[ci];
+    el.textContent=cmd.slice(0,pos);
+    if(!del){pos++;if(pos>cmd.length){del=true;setTimeout(step,2200);return}}
+    else{pos--;if(pos===0){del=false;ci=(ci+1)%cmds.length}}
+    setTimeout(step,del?18:45);
+  }
+  step();
+})();
+
+/* duplicate cert track for seamless marquee */
+(function(){const t=document.getElementById('certTrack');t.innerHTML+=t.innerHTML;})();
+</script>
 {{ end }}
