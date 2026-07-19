@@ -176,7 +176,5 @@ Zero Trust is a direction, not a destination. Start moving. Every step matters.
 
 ---
 
-*Questions, disagreements, or war stories from your own Zero Trust implementations — drop them in the comments.*
-
 *Majid Ahmed — CCIE #55880 | CISSP | PCNSE | Senior Network & Security Engineer*
 *[linkedin.com/in/majid-information-security](https://linkedin.com/in/majid-information-security)*
