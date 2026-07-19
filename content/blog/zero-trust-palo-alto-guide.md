@@ -1,6 +1,6 @@
 ---
 title: "Implementing Zero Trust on Palo Alto NGFW — A Practical Guide"
-date: 2026-07-09
+date: 2026-07-19
 draft: false
 tags: ["zero-trust", "palo-alto", "panorama", "ngfw", "network-security", "security-architecture"]
 categories: ["network-security"]
