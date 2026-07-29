@@ -127,6 +127,10 @@ section{padding:clamp(70px,9vw,120px) clamp(20px,5vw,64px);position:relative}
   .hero-split{grid-template-columns:1fr}
   .hero-panel{order:-1}
 }
+@media(max-width:768px){
+  .hero-copy{order:1}
+  .hero-panel{display:none}
+}
 
 /* ---------- terminal widget ---------- */
 .term-widget{background:#080e16;border:1px solid #0e2a3a;border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:13px;margin-bottom:0}
