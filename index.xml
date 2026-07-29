@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PacketPwned — Majid Ahmed on PacketPwned</title><link>https://packetpwned.com/</link><description>Recent content in PacketPwned — Majid Ahmed on PacketPwned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://packetpwned.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Your Firewall Is Not Your Biggest Security Risk</title><link>https://packetpwned.com/blog/human-factor-cybersecurity/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/blog/human-factor-cybersecurity/</guid><description>&lt;p&gt;Let me say something that might be uncomfortable if you&amp;rsquo;ve spent your career building security infrastructure.&lt;/p&gt;
+&lt;p&gt;The firewall isn&amp;rsquo;t your biggest risk. Neither is the unpatched server, the misconfigured VPN, or the overly permissive security policy. Those things matter — I spend most of my working life dealing with them — but they&amp;rsquo;re not where most breaches actually start.&lt;/p&gt;
+&lt;p&gt;Most breaches start with a person.&lt;/p&gt;
+&lt;p&gt;An email that looks real. A phone call from someone claiming to be from IT. A link clicked at 11pm on a Friday when someone&amp;rsquo;s tired and not paying attention. A contractor whose access was never revoked after they left six months ago.&lt;/p&gt;</description></item><item><title>Implementing Zero Trust on Palo Alto NGFW — A Practical Guide</title><link>https://packetpwned.com/blog/zero-trust-palo-alto-guide/</link><pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/blog/zero-trust-palo-alto-guide/</guid><description>&lt;p&gt;Let me start with something that might be unpopular.&lt;/p&gt;
+&lt;p&gt;Most Zero Trust implementations I&amp;rsquo;ve seen aren&amp;rsquo;t Zero Trust. They&amp;rsquo;re network segmentation with a rebrand. They&amp;rsquo;re VLANs with stricter ACLs and a slide deck that says &amp;ldquo;Zero Trust&amp;rdquo; on the cover.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s not a criticism of the engineers who built them. It&amp;rsquo;s a reflection of how the term has been marketed — as a product you buy rather than an architecture you build. Every vendor has a &amp;ldquo;Zero Trust solution&amp;rdquo; now. Most of them are useful tools. None of them, on their own, give you Zero Trust.&lt;/p&gt;</description></item><item><title>5 Red Flags in Enterprise Firewall Audits</title><link>https://packetpwned.com/blog/firewall-audit-red-flags/</link><pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/blog/firewall-audit-red-flags/</guid><description>&lt;p&gt;I&amp;rsquo;ve reviewed a lot of firewall policies over the years.&lt;/p&gt;
+&lt;p&gt;Multi-site enterprises, healthcare organisations, financial institutions, telecoms infrastructure. Different industries, different sizes, different vendors. But the problems I find? They&amp;rsquo;re almost always the same ones.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s not a coincidence. These issues aren&amp;rsquo;t unique to one organisation or one team. They&amp;rsquo;re the natural result of networks that grow faster than documentation, teams that change without handover, and policies that get added under pressure and never revisited.&lt;/p&gt;</description></item><item><title>From Network Engineer to Pentester — Why I Started TryHackMe</title><link>https://packetpwned.com/blog/tryhackme-journey/</link><pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/blog/tryhackme-journey/</guid><description>&lt;p&gt;I want to be upfront about something before we get into this.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not a beginner. I hold CCIE #55880 and CISSP certifications. I spent 8 years at du (EITC) — one of the UAE&amp;rsquo;s largest telecoms operators — starting from service activation, moving through the NOC, and eventually working on core network infrastructure. I now work as a Senior Network &amp;amp; Security Engineer at Alpha Data, designing and deploying enterprise security solutions across the UAE.&lt;/p&gt;</description></item><item><title>TryHackMe: John the Ripper</title><link>https://packetpwned.com/writeups/john-the-ripper/</link><pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/writeups/john-the-ripper/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;John the Ripper (JtR) is one of the most widely used password cracking tools in offensive security. This room on TryHackMe walks through everything from cracking basic hashes to protected archives and SSH private keys. One of the best rooms on the platform — highly recommended.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Room:&lt;/strong&gt; &lt;a href="https://tryhackme.com/room/johntheripper0"&gt;John the Ripper&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;br&gt;
+&lt;strong&gt;Path:&lt;/strong&gt; Jr Penetration Tester&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-john-the-ripper"&gt;What is John the Ripper?&lt;/h2&gt;
+&lt;p&gt;John the Ripper is an open-source, fast password cracker. It supports hundreds of hash types and can operate in several modes:&lt;/p&gt;</description></item><item><title>TryHackMe: DNS in Detail</title><link>https://packetpwned.com/writeups/dns-in-detail/</link><pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/writeups/dns-in-detail/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Room:&lt;/strong&gt; DNS in Detail&lt;br&gt;
+&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;br&gt;
+&lt;strong&gt;Platform:&lt;/strong&gt; TryHackMe&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-dns"&gt;What is DNS?&lt;/h2&gt;
+&lt;p&gt;DNS (Domain Name System) is the internet&amp;rsquo;s phonebook. Every device on the internet is identified by an IP address (e.g. &lt;code&gt;104.26.10.229&lt;/code&gt;). Since memorising raw numbers for every site is impractical, DNS maps human-readable names like &lt;code&gt;tryhackme.com&lt;/code&gt; to the correct IP behind the scenes.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="domain-hierarchy"&gt;Domain Hierarchy&lt;/h2&gt;
+&lt;p&gt;Domains follow a right-to-left hierarchy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TLD (Top-Level Domain)&lt;/strong&gt; — the rightmost label. Two types:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;gTLD&lt;/strong&gt; (Generic): &lt;code&gt;.com&lt;/code&gt;, &lt;code&gt;.org&lt;/code&gt;, &lt;code&gt;.edu&lt;/code&gt;, &lt;code&gt;.gov&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ccTLD&lt;/strong&gt; (Country Code): &lt;code&gt;.co.uk&lt;/code&gt;, &lt;code&gt;.ae&lt;/code&gt;, &lt;code&gt;.ca&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Second-Level Domain&lt;/strong&gt; — sits left of the TLD (e.g. &lt;code&gt;tryhackme&lt;/code&gt; in &lt;code&gt;tryhackme.com&lt;/code&gt;). Max 63 characters, &lt;code&gt;a-z 0-9&lt;/code&gt; and hyphens only.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subdomain&lt;/strong&gt; — prepended to the left (e.g. &lt;code&gt;admin.tryhackme.com&lt;/code&gt;). Same character rules. Total domain length must not exceed &lt;strong&gt;253 characters&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="dns-record-types"&gt;DNS Record Types&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Record&lt;/th&gt;
+					&lt;th&gt;Resolves To&lt;/th&gt;
+					&lt;th&gt;Notes&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;A&lt;/td&gt;
+					&lt;td&gt;IPv4 address&lt;/td&gt;
+					&lt;td&gt;e.g. &lt;code&gt;104.26.10.229&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;AAAA&lt;/td&gt;
+					&lt;td&gt;IPv6 address&lt;/td&gt;
+					&lt;td&gt;e.g. &lt;code&gt;2606:4700:20::681a:be5&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;CNAME&lt;/td&gt;
+					&lt;td&gt;Another domain name&lt;/td&gt;
+					&lt;td&gt;Triggers a second DNS lookup on the target&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;MX&lt;/td&gt;
+					&lt;td&gt;Mail server hostname&lt;/td&gt;
+					&lt;td&gt;Includes a priority value — lower = higher priority&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;TXT&lt;/td&gt;
+					&lt;td&gt;Arbitrary text&lt;/td&gt;
+					&lt;td&gt;Used for SPF, DMARC, domain ownership verification&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="dns-resolution-flow"&gt;DNS Resolution Flow&lt;/h2&gt;
+&lt;p&gt;When you request a domain, the query travels through several layers:&lt;/p&gt;</description></item><item><title>TryHackMe: Hashing Basics</title><link>https://packetpwned.com/writeups/hashing-basics/</link><pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/writeups/hashing-basics/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Room:&lt;/strong&gt; Hashing Basics&lt;br&gt;
+&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;br&gt;
+&lt;strong&gt;Platform:&lt;/strong&gt; TryHackMe&lt;br&gt;
+&lt;strong&gt;Path:&lt;/strong&gt; Cyber Security 101 &amp;gt; Cryptography&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-hashing"&gt;What is Hashing?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;hash function&lt;/strong&gt; takes an input of arbitrary size and produces a fixed-length output called a &lt;strong&gt;hash value&lt;/strong&gt;. Key properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Deterministic&lt;/strong&gt; — same input always produces the same output&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-way&lt;/strong&gt; — you cannot reverse a hash to recover the original input&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Avalanche effect&lt;/strong&gt; — a single bit change in the input produces a completely different hash&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fixed output size&lt;/strong&gt; — regardless of input length, the output is always the same size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Common use cases: password storage, file integrity verification, digital signatures, and data deduplication.&lt;/p&gt;</description></item><item><title>About</title><link>https://packetpwned.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://packetpwned.com/about/</guid><description>&lt;h2 id="whoami"&gt;whoami&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m &lt;strong&gt;Majid Ahmed&lt;/strong&gt;, a Senior Network &amp;amp; Security Engineer based in the UAE with over 10 years of experience designing and securing enterprise-grade infrastructure.&lt;/p&gt;
+&lt;p&gt;Currently working at &lt;strong&gt;Alphadata&lt;/strong&gt; (Jan 2023–present), previously at &lt;strong&gt;EITC (du)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;My tagline: &lt;em&gt;Designing Secure &amp;amp; Resilient Networks.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="certifications"&gt;Certifications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CCIE #55880&lt;/strong&gt; — Expert-level routing &amp;amp; switching&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CISSP&lt;/strong&gt; — Certified Information Systems Security Professional&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PCNSE&lt;/strong&gt; — Palo Alto Networks Certified Security Engineer&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NSE4&lt;/strong&gt; — Fortinet Network Security Expert&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CEH&lt;/strong&gt; — Certified Ethical Hacker&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CompTIA Security+&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ISO 27001&lt;/strong&gt; Lead Implementer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="technical-focus"&gt;Technical Focus&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;BGP, MPLS, VRF, OSPF, SD-WAN&lt;/li&gt;
+&lt;li&gt;Palo Alto NGFW / Panorama&lt;/li&gt;
+&lt;li&gt;Network automation (NETCONF/RESTCONF, YANG, Python)&lt;/li&gt;
+&lt;li&gt;Penetration testing (TryHackMe Junior Pentester path)&lt;/li&gt;
+&lt;li&gt;Zero Trust architecture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="this-site"&gt;This Site&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;packetpwned.com&lt;/code&gt; is where I publish:&lt;/p&gt;</description></item><item><title>Healthy Body, Healthy Mind</title><link>https://packetpwned.com/fitness/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://packetpwned.com/fitness/</guid><description>&lt;div class="fitness-dash"&gt;
+
+ 
+ &lt;div class="fd-status-bar"&gt;
+ &lt;span class="fd-status-label"&gt;Jul 2026 load&lt;/span&gt;
+ &lt;div class="fd-progress-wrap"&gt;
+ &lt;div class="fd-progress-track"&gt;
+ &lt;div class="fd-progress-fill" id="loadBar"
+ data-runs="7"
+ data-rides="11"
+ data-hiit="13"&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;span class="fd-status-meta"&gt;7 runs · 11 rides · 13 HIIT&lt;/span&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;p class="fd-section-comment"&gt;yearly_summary&lt;/p&gt;
+ &lt;div class="fd-metrics-grid"&gt;
+ &lt;div class="fd-metric-card fd-accent-teal"&gt;
+ &lt;p class="fd-label"&gt;Total distance&lt;/p&gt;
+ &lt;p class="fd-value"&gt;643.3&lt;span class="fd-unit"&gt;km&lt;/span&gt;&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;Running only&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-metric-card"&gt;
+ &lt;p class="fd-label"&gt;Activities&lt;/p&gt;
+ &lt;p class="fd-value"&gt;306&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;All types&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-metric-card"&gt;
+ &lt;p class="fd-label"&gt;Calories burned&lt;/p&gt;
+ &lt;p class="fd-value"&gt;62k&lt;span class="fd-unit"&gt;kcal&lt;/span&gt;&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;Logged activities&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-metric-card fd-accent-purple"&gt;
+ &lt;p class="fd-label"&gt;Best month&lt;/p&gt;
+ &lt;p class="fd-value" style="font-size:1.1rem"&gt;Jan 2026&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;114 km&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-metric-card"&gt;
+ &lt;p class="fd-label"&gt;Longest run&lt;/p&gt;
+ &lt;p class="fd-value"&gt;21.3&lt;span class="fd-unit"&gt;km&lt;/span&gt;&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;RAK Half Marathon&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-metric-card"&gt;
+ &lt;p class="fd-label"&gt;Peak pace&lt;/p&gt;
+ &lt;p class="fd-value"&gt;3:29&lt;span class="fd-unit"&gt;/km&lt;/span&gt;&lt;/p&gt;
+ &lt;p class="fd-sub"&gt;Race condition&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;p class="fd-section-comment"&gt;monthly_distance_km&lt;/p&gt;
+ &lt;div class="fd-chart-card"&gt;
+ &lt;p class="fd-chart-title"&gt;running distance · monthly total (km)&lt;/p&gt;
+ &lt;div class="fd-legend"&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#00E5B4"&gt;&lt;/span&gt;Running km&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-chart-wrap" style="height:220px"&gt;
+ &lt;canvas id="fdDistChart"
+ data-labels='[&amp;#34;Jul&amp;#34;,&amp;#34;Aug&amp;#34;,&amp;#34;Sep&amp;#34;,&amp;#34;Oct&amp;#34;,&amp;#34;Nov&amp;#34;,&amp;#34;Dec&amp;#34;,&amp;#34;Jan&amp;#34;,&amp;#34;Feb&amp;#34;,&amp;#34;Mar&amp;#34;,&amp;#34;Apr&amp;#34;,&amp;#34;May&amp;#34;,&amp;#34;Jun&amp;#34;]'
+ data-values='[37.4,46.9,78.1,100.2,114,65.6,76.5,80.1,37.9,83.3,59.4,10.3]'
+ role="img" aria-label="Monthly running distance in km"&gt;
+ &lt;/canvas&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;p class="fd-section-comment"&gt;pace_vs_recovery_score&lt;/p&gt;
+ &lt;div class="fd-chart-card"&gt;
+ &lt;p class="fd-chart-title"&gt;avg run speed (km/h) vs weekly recovery score — monthly&lt;/p&gt;
+ &lt;div class="fd-legend"&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#00E5B4"&gt;&lt;/span&gt;Run speed (km/h)&lt;/span&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#7B61FF"&gt;&lt;/span&gt;Recovery score&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-chart-wrap" style="height:230px"&gt;
+ &lt;canvas id="fdPaceChart"
+ data-labels='[&amp;#34;Jul&amp;#34;,&amp;#34;Aug&amp;#34;,&amp;#34;Sep&amp;#34;,&amp;#34;Oct&amp;#34;,&amp;#34;Nov&amp;#34;,&amp;#34;Dec&amp;#34;,&amp;#34;Jan&amp;#34;,&amp;#34;Feb&amp;#34;,&amp;#34;Mar&amp;#34;,&amp;#34;Apr&amp;#34;,&amp;#34;May&amp;#34;,&amp;#34;Jun&amp;#34;]'
+ data-speed='[6.8,7.1,7.3,7.5,7.6,7.3,8,7.9,7.3,7.2,7.5,7]'
+ data-recovery='[65,65,58,59,62,59,70,61,58,59,67,68]'
+ role="img" aria-label="Run speed vs recovery score"&gt;
+ &lt;/canvas&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;div class="fd-two-col"&gt;
+ &lt;div&gt;
+ &lt;p class="fd-section-comment"&gt;activity_mix&lt;/p&gt;
+ &lt;div class="fd-chart-card"&gt;
+ &lt;p class="fd-chart-title"&gt;activity type split&lt;/p&gt;
+ &lt;div class="fd-chart-wrap" style="height:210px"&gt;
+ &lt;canvas id="fdDonutChart" role="img" aria-label="Activity type distribution"&gt;Activity split.&lt;/canvas&gt;
+ &lt;/div&gt;
+ &lt;div class="fd-legend" style="margin-top:10px;justify-content:center"&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#00E5B4"&gt;&lt;/span&gt;Run 68%&lt;/span&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#7B61FF"&gt;&lt;/span&gt;Gym/HIIT 21%&lt;/span&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#F59E0B"&gt;&lt;/span&gt;Ride 7%&lt;/span&gt;
+ &lt;span&gt;&lt;span class="fd-legend-dot" style="background:#4A5568"&gt;&lt;/span&gt;Other 4%&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+ &lt;p class="fd-section-comment"&gt;monthly_sessions&lt;/p&gt;</description></item></channel></rss>

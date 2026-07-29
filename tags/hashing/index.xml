@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hashing on PacketPwned</title><link>https://packetpwned.com/tags/hashing/</link><description>Recent content in Hashing on PacketPwned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://packetpwned.com/tags/hashing/index.xml" rel="self" type="application/rss+xml"/><item><title>TryHackMe: Hashing Basics</title><link>https://packetpwned.com/writeups/hashing-basics/</link><pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate><guid>https://packetpwned.com/writeups/hashing-basics/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Room:&lt;/strong&gt; Hashing Basics&lt;br&gt;
+&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;br&gt;
+&lt;strong&gt;Platform:&lt;/strong&gt; TryHackMe&lt;br&gt;
+&lt;strong&gt;Path:&lt;/strong&gt; Cyber Security 101 &amp;gt; Cryptography&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-hashing"&gt;What is Hashing?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;hash function&lt;/strong&gt; takes an input of arbitrary size and produces a fixed-length output called a &lt;strong&gt;hash value&lt;/strong&gt;. Key properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Deterministic&lt;/strong&gt; — same input always produces the same output&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-way&lt;/strong&gt; — you cannot reverse a hash to recover the original input&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Avalanche effect&lt;/strong&gt; — a single bit change in the input produces a completely different hash&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fixed output size&lt;/strong&gt; — regardless of input length, the output is always the same size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Common use cases: password storage, file integrity verification, digital signatures, and data deduplication.&lt;/p&gt;</description></item></channel></rss>
