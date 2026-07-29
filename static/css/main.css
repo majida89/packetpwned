@@ -122,14 +122,14 @@ section{padding:clamp(70px,9vw,120px) clamp(20px,5vw,64px);position:relative}
 /* ---------- hero two-column split ---------- */
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);align-items:start;width:100%;max-width:none}
 .hero-copy{display:flex;flex-direction:column}
-.hero-panel{display:flex;flex-direction:column;gap:16px}
+.hero-panel{display:flex;flex-direction:column;gap:12px}
 @media(max-width:960px){
   .hero-split{grid-template-columns:1fr}
   .hero-panel{order:-1}
 }
 
 /* ---------- terminal widget ---------- */
-.term-widget{background:#080e16;border:1px solid #0e2a3a;border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:13px}
+.term-widget{background:#080e16;border:1px solid #0e2a3a;border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:13px;margin-bottom:0}
 .term-bar{background:#0d1b2a;padding:10px 14px;display:flex;align-items:center;gap:7px}
 .term-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
 .term-dot.r{background:#ff5f57}.term-dot.y{background:#febc2e}.term-dot.g{background:#28c840}
@@ -145,7 +145,7 @@ section{padding:clamp(70px,9vw,120px) clamp(20px,5vw,64px);position:relative}
 .term-blink{animation:blink 1s steps(1) infinite;color:#00ff88}
 
 /* ---------- cert badge grid ---------- */
-.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:0}
 @media(max-width:500px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
 .cert-badge{background:#080e16;border:1px solid #0e2a3a;border-radius:10px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .cb-ring{width:48px;height:48px;border-radius:50%;border:2px solid var(--c,#FFB020);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:600;color:var(--c,#FFB020);letter-spacing:.04em;text-align:center;flex-shrink:0}
