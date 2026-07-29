@@ -117,7 +117,7 @@ section{padding:clamp(70px,9vw,120px) clamp(20px,5vw,64px);position:relative}
 .cli .prompt{color:var(--amber)}
 .cli .cursor{display:inline-block;width:8px;height:16px;background:var(--amber);transform:translateY(3px);animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:48px}
 
 /* ---------- hero two-column split ---------- */
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);align-items:start;width:100%;max-width:none}
