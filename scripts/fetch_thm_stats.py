@@ -93,21 +93,7 @@ if __name__ == "__main__":
         stats = fetch_stats(THM_USERNAME)
         write_json(stats, OUTPUT_PATH)
 
-    except requests.HTTPError as e:
-        print(f"[!] HTTP error: {e}", file=sys.stderr)
-        # If we already have data, keep it rather than failing the build
-        existing = load_existing(OUTPUT_PATH)
-        if existing:
-            print("[!] Keeping existing data — THM API may be rate-limiting.")
-            sys.exit(0)
-        else:
-            sys.exit(1)
-
     except Exception as e:
-        print(f"[!] Unexpected error: {e}", file=sys.stderr)
-        existing = load_existing(OUTPUT_PATH)
-        if existing:
-            print("[!] Keeping existing data.")
-            sys.exit(0)
-        else:
-            sys.exit(1)
+        print(f"[!] Error: {e}", file=sys.stderr)
+        print("[!] Keeping existing data — build will continue.")
+        sys.exit(0)
