@@ -1,0 +1,60 @@
+{{/* layouts/partials/thm-bar.html
+     Reads live stats from data/thm.json (written by scripts/fetch_thm_stats.py)
+     Falls back to static values if the file doesn't exist yet.
+*/}}
+
+{{ $thm := dict
+    "top_pct"       "top 5%"
+    "rank"          116247
+    "streak"        82
+    "rooms_complete" 60
+    "badges"        11
+    "profile_url"   "https://tryhackme.com/p/majida89"
+    "updated_at"    ""
+}}
+
+{{/* Override with live data if thm.json exists */}}
+{{ with .Site.Data.thm }}
+  {{ $thm = . }}
+{{ end }}
+
+<div class="thm-bar">
+
+  <div class="thm-left">
+    <span class="thm-dot" aria-hidden="true"></span>
+    <span class="thm-label">TryHackMe</span>
+  </div>
+
+  <div class="thm-stats">
+    <span class="thm-stat">
+      <span class="thm-stat-val">{{ $thm.top_pct }}</span>
+    </span>
+    <span class="thm-divider" aria-hidden="true">·</span>
+    <span class="thm-stat">
+      <span class="thm-stat-label">rank</span>
+      <span class="thm-stat-val">#{{ $thm.rank | lang.FormatNumber 0 }}</span>
+    </span>
+    <span class="thm-divider" aria-hidden="true">·</span>
+    <span class="thm-stat">
+      <span class="thm-stat-label">streak</span>
+      <span class="thm-stat-val">{{ $thm.streak }}d</span>
+    </span>
+    <span class="thm-divider" aria-hidden="true">·</span>
+    <span class="thm-stat">
+      <span class="thm-stat-label">rooms</span>
+      <span class="thm-stat-val">{{ $thm.rooms_complete }}</span>
+    </span>
+  </div>
+
+  <a href="{{ $thm.profile_url }}"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="thm-link"
+     aria-label="View TryHackMe profile">↗</a>
+
+</div>
+
+{{/* Optional: tiny "last updated" note for transparency */}}
+{{ with $thm.updated_at }}
+<p class="thm-updated">stats updated {{ . | time.Format "2 Jan 2006" }}</p>
+{{ end }}
