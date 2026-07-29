@@ -3,17 +3,56 @@
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
   <svg id="topo" aria-hidden="true"></svg>
-  <div class="hero-inner">
-    <span class="eyebrow">SENIOR NETWORK &amp; SECURITY ENGINEER — UAE · PENTESTER IN PROGRESS</span>
-    <h1>Designing<br><span class="amber">Secure</span> &amp; <span class="outline">Resilient</span><br>Networks</h1>
-    <p class="hero-sub">I'm <strong>Majid Ahmed</strong> — CCIE #55880, CISSP. I build and defend enterprise infrastructure across the Emirates: <strong>Palo Alto NGFW &amp; Panorama, SD-WAN, BGP/MPLS, Zero Trust</strong> — and I'm learning to break what I build through TryHackMe.</p>
-    <div class="cli"><span class="prompt">majid@packetpwned&gt;</span> <span id="typed">show interface trust | match up</span><span class="cursor"></span></div>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/writeups/">Read the writeups →</a>
-      <a class="btn btn-ghost" href="/blog/">Blog</a>
-      <a class="btn btn-ghost" href="/fitness/">Fitness telemetry</a>
+  <div class="hero-inner hero-split">
+
+    <!-- LEFT: copy -->
+    <div class="hero-copy">
+      <span class="eyebrow">SENIOR NETWORK &amp; SECURITY ENGINEER — UAE · PENTESTER IN PROGRESS</span>
+      <h1>Designing<br><span class="amber">Secure</span> &amp; <span class="outline">Resilient</span><br>Networks</h1>
+      <p class="hero-sub">I'm <strong>Majid Ahmed</strong> — CCIE #55880, CISSP. I build and defend enterprise infrastructure across the Emirates: <strong>Palo Alto NGFW &amp; Panorama, SD-WAN, BGP/MPLS, Zero Trust</strong> — and I'm learning to break what I build through TryHackMe.</p>
+      <div class="cli"><span class="prompt">majid@packetpwned&gt;</span> <span id="typed">show interface trust | match up</span><span class="cursor"></span></div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/writeups/">Read the writeups →</a>
+        <a class="btn btn-ghost" href="/blog/">Blog</a>
+        <a class="btn btn-ghost" href="/fitness/">Fitness telemetry</a>
+      </div>
     </div>
-    <div style="margin-top:28px;max-width:560px">{{ partial "thm-bar.html" . }}</div>
+
+    <!-- RIGHT: terminal + certs + THM -->
+    <div class="hero-panel">
+
+      <!-- Terminal widget -->
+      <div class="term-widget">
+        <div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-title">majid@packetpwned — recon</span></div>
+        <div class="term-body">
+          <div class="term-line"><span class="term-ps">$</span> <span class="term-cmd">whoami</span></div>
+          <div class="term-line term-out">majid.ahmed</div>
+          <div class="term-line term-blank"></div>
+          <div class="term-line"><span class="term-ps">$</span> <span class="term-cmd">cat profile.json</span></div>
+          <div class="term-line term-out">{</div>
+          <div class="term-line term-out">&nbsp;&nbsp;<span class="term-key">"role"</span>&nbsp;&nbsp;<span class="term-val">"Sr. Network &amp; Security Engineer"</span></div>
+          <div class="term-line term-out">&nbsp;&nbsp;<span class="term-key">"org"</span>&nbsp;&nbsp;&nbsp;<span class="term-val">"Alpha Data, UAE"</span></div>
+          <div class="term-line term-out">&nbsp;&nbsp;<span class="term-key">"ccie"</span>&nbsp;&nbsp;<span class="term-val">"#55880"</span></div>
+          <div class="term-line term-out">&nbsp;&nbsp;<span class="term-key">"focus"</span>&nbsp;<span class="term-val">"NGFW"</span>&nbsp;&nbsp;<span class="term-val">"SD-WAN"</span>&nbsp;&nbsp;<span class="term-val">"Zero Trust"</span></div>
+          <div class="term-line term-out">&nbsp;&nbsp;<span class="term-key">"mode"</span>&nbsp;&nbsp;<span class="term-val">"pentester_in_progress"</span></div>
+          <div class="term-line term-out">}</div>
+          <div class="term-line term-blank"></div>
+          <div class="term-line"><span class="term-ps">$</span> <span class="term-cmd">nmap --open packetpwned.com<span class="term-blink">▊</span></span></div>
+        </div>
+      </div>
+
+      <!-- Cert badges -->
+      <div class="cert-grid">
+        <div class="cert-badge"><span class="cb-ring" style="--c:#FFB020">CCIE</span><span class="cb-label">#55880<br><small>Enterprise</small></span></div>
+        <div class="cert-badge"><span class="cb-ring" style="--c:#53C8F5">CISSP</span><span class="cb-label">ISC²<br><small>Security</small></span></div>
+        <div class="cert-badge"><span class="cb-ring" style="--c:#4CAF50">PCNSE</span><span class="cb-label">Palo Alto<br><small>Networks</small></span></div>
+        <div class="cert-badge"><span class="cb-ring" style="--c:#E53935">CEH</span><span class="cb-label">EC-Council<br><small>Ethical Hack</small></span></div>
+      </div>
+
+      <!-- THM bar -->
+      {{ partial "thm-bar.html" . }}
+
+    </div>
   </div>
 </header>
 
