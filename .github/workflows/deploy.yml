@@ -23,6 +23,9 @@ permissions:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       # ── 1. Checkout ────────────────────────────────────────────────────────
@@ -65,10 +68,12 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
-      # ── 7. Deploy to GitHub Pages ──────────────────────────────────────────
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      # ── 7. Upload & Deploy via official GitHub Pages ──────────────────────
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
