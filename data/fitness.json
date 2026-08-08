@@ -5,8 +5,8 @@
     "source": "Garmin Connect + Strava"
   },
   "yearly": {
-    "total_run_km": 644.0,
-    "total_activities": 317,
+    "total_run_km": 646.3,
+    "total_activities": 318,
     "total_calories": 62000,
     "best_month": "Jan 2026",
     "best_month_km": 114,
@@ -29,10 +29,10 @@
   },
   "current_month": {
     "label": "Aug 2026",
-    "runs": 1,
+    "runs": 2,
     "rides": 4,
     "hiit": 4,
-    "run_km": 0.7
+    "run_km": 3.1
   },
   "races": [
     {
