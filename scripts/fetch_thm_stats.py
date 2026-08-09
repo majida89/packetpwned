@@ -23,41 +23,33 @@ TIMEOUT       = 15                        # seconds
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     ),
     "Accept": "application/json",
+    "Referer": "https://tryhackme.com/",
 }
 
 # ── Fetch ─────────────────────────────────────────────────────────────────────
 def fetch_stats(username: str) -> dict:
-    """Pull stats from the THM public API endpoints."""
+    """Pull stats from the THM v2 public profile endpoint."""
 
-    stats = {}
-
-    # Primary endpoint — rank, badges, rooms, points
-    url_rank = f"https://tryhackme.com/api/user/rank/{username}"
-    r = requests.get(url_rank, headers=HEADERS, timeout=TIMEOUT)
+    url = f"https://tryhackme.com/api/v2/public-profile/?username={username}"
+    r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
     r.raise_for_status()
-    rank_data = r.json()
+    data = r.json().get("data", {})
 
-    stats["rank"]           = rank_data.get("userRank", 0)
-    stats["points"]         = rank_data.get("userPoints", 0)
-    stats["badges"]         = rank_data.get("totalBadges", 0)
-    stats["rooms_complete"] = rank_data.get("completedRooms", 0)
+    top_pct = data.get("topPercentage", 5)
 
-    # Secondary endpoint — streak & top % label
-    url_profile = f"https://tryhackme.com/api/v2/public-profile/?username={username}"
-    rp = requests.get(url_profile, headers=HEADERS, timeout=TIMEOUT)
-    rp.raise_for_status()
-    profile_data = rp.json()
-
-    data = profile_data.get("data", profile_data)   # handle nested or flat
-    stats["streak"]    = data.get("streak", {}).get("currentStreak", 0)
-    stats["top_pct"]   = data.get("userRankBadge", "top 5%")   # e.g. "top 5%"
-    stats["level"]     = data.get("level", "")
-
-    return stats
+    return {
+        "rank":           data.get("rank", 0),
+        "points":         data.get("totalPoints", 0),
+        "badges":         data.get("badgesNumber", 0),
+        "rooms_complete": data.get("completedRoomsNumber", 0),
+        "streak":         data.get("streak", 0),
+        "top_pct":        f"top {top_pct}%",
+        "level":          data.get("level", ""),
+    }
 
 
 # ── Write ─────────────────────────────────────────────────────────────────────
