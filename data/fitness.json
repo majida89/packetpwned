@@ -29,10 +29,10 @@
   },
   "current_month": {
     "label": "Aug 2026",
-    "runs": 2,
+    "runs": 3,
     "rides": 8,
     "hiit": 8,
-    "run_km": 3.1
+    "run_km": 5.6
   },
   "races": [
     {
