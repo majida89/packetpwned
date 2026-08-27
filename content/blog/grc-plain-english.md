@@ -1,6 +1,6 @@
 ---
 title: "GRC in Plain English : Governance, Risk and Compliance Explained"
-date: 2026-08-26
+date: 2026-08-27
 draft: false
 tags: ["grc", "governance", "risk-management", "compliance", "cissp", "cybersecurity"]
 categories: ["cybersecurity"]
