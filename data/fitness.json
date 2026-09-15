@@ -6,7 +6,7 @@
   },
   "yearly": {
     "total_run_km": 653.8,
-    "total_activities": 337,
+    "total_activities": 339,
     "total_calories": 62000,
     "best_month": "Jan 2026",
     "best_month_km": 114,
@@ -30,8 +30,8 @@
   "current_month": {
     "label": "Sep 2026",
     "runs": 2,
-    "rides": 5,
-    "hiit": 7,
+    "rides": 6,
+    "hiit": 8,
     "run_km": 2.7
   },
   "races": [
