@@ -1,12 +1,12 @@
 {
   "meta": {
     "period": "Jul 2025 – Jun 2026",
-    "last_sync": "Sep 2026",
+    "last_sync": "Oct 2026",
     "source": "Garmin Connect + Strava"
   },
   "yearly": {
     "total_run_km": 653.8,
-    "total_activities": 339,
+    "total_activities": 370,
     "total_calories": 62000,
     "best_month": "Jan 2026",
     "best_month_km": 114,
@@ -28,11 +28,11 @@
     "other": 4
   },
   "current_month": {
-    "label": "Sep 2026",
+    "label": "Oct 2026",
     "runs": 2,
-    "rides": 6,
-    "hiit": 8,
-    "run_km": 2.7
+    "rides": 1,
+    "hiit": 12,
+    "run_km": 5.8
   },
   "races": [
     {
