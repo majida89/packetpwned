@@ -29,10 +29,10 @@
   },
   "current_month": {
     "label": "Nov 2026",
-    "runs": 6,
+    "runs": 7,
     "rides": 0,
-    "hiit": 9,
-    "run_km": 15.5
+    "hiit": 11,
+    "run_km": 18.0
   },
   "races": [
     {
